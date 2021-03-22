@@ -1,0 +1,9 @@
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\bin\Debug\netcoreapp3.1\ConnectionManager.deps.json
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\bin\Debug\netcoreapp3.1\ConnectionManager.dll
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\bin\Debug\netcoreapp3.1\ConnectionManager.pdb
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.csprojAssemblyReference.cache
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.AssemblyInfoInputs.cache
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.AssemblyInfo.cs
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.csproj.CoreCompileInputs.cache
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.dll
+D:\Projects\WM\WMServer\WMServer\ConnectionManager\obj\Debug\netcoreapp3.1\ConnectionManager.pdb

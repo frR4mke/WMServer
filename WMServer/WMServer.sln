@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMServer", "WMServer\WMServer.csproj", "{8606D403-8697-4D9A-A512-90423A02BFB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDapper", "NDapper\NDapper.csproj", "{A6D93A1E-CCBA-45E1-8474-2E26676A09DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectionManager", "ConnectionManager\ConnectionManager.csproj", "{DD14BAB7-689E-42E5-8425-2E60D425BACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extensions", "Extensions\Extensions.csproj", "{ADDABE8B-6076-416A-AD79-C16F388E5E0E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthLibrary", "..\..\..\AhtubaCore\AuthLibrary\AuthLibrary.csproj", "{40E804E0-5899-4C87-9DCE-9B20BD5FBFCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMBLogic", "WMBLogic\WMBLogic.csproj", "{20A5B7DE-0923-4D0F-84A9-02C4DBBB66FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8606D403-8697-4D9A-A512-90423A02BFB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8606D403-8697-4D9A-A512-90423A02BFB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8606D403-8697-4D9A-A512-90423A02BFB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8606D403-8697-4D9A-A512-90423A02BFB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D93A1E-CCBA-45E1-8474-2E26676A09DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D93A1E-CCBA-45E1-8474-2E26676A09DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D93A1E-CCBA-45E1-8474-2E26676A09DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D93A1E-CCBA-45E1-8474-2E26676A09DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD14BAB7-689E-42E5-8425-2E60D425BACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD14BAB7-689E-42E5-8425-2E60D425BACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD14BAB7-689E-42E5-8425-2E60D425BACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD14BAB7-689E-42E5-8425-2E60D425BACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADDABE8B-6076-416A-AD79-C16F388E5E0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDABE8B-6076-416A-AD79-C16F388E5E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDABE8B-6076-416A-AD79-C16F388E5E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDABE8B-6076-416A-AD79-C16F388E5E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E804E0-5899-4C87-9DCE-9B20BD5FBFCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E804E0-5899-4C87-9DCE-9B20BD5FBFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E804E0-5899-4C87-9DCE-9B20BD5FBFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E804E0-5899-4C87-9DCE-9B20BD5FBFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20A5B7DE-0923-4D0F-84A9-02C4DBBB66FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20A5B7DE-0923-4D0F-84A9-02C4DBBB66FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20A5B7DE-0923-4D0F-84A9-02C4DBBB66FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20A5B7DE-0923-4D0F-84A9-02C4DBBB66FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {462B65CA-0722-4AC8-87B0-3C0659168A74}
+	EndGlobalSection
+EndGlobal

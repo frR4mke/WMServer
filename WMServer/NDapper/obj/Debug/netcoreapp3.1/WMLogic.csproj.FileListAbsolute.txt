@@ -1,0 +1,4 @@
+D:\Projects\WM\WMServer\WMServer\NDapper\obj\Debug\netcoreapp3.1\WMLogic.csprojAssemblyReference.cache
+D:\Projects\WM\WMServer\WMServer\NDapper\obj\Debug\netcoreapp3.1\WMLogic.AssemblyInfoInputs.cache
+D:\Projects\WM\WMServer\WMServer\NDapper\obj\Debug\netcoreapp3.1\WMLogic.AssemblyInfo.cs
+D:\Projects\WM\WMServer\WMServer\NDapper\obj\Debug\netcoreapp3.1\WMLogic.csproj.CoreCompileInputs.cache

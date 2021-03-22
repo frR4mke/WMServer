@@ -1,0 +1,16 @@
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\WMBLogic.deps.json
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\WMBLogic.dll
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\WMBLogic.pdb
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\ConnectionManager.dll
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Extensions.dll
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\NDapper.dll
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\ConnectionManager.pdb
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Extensions.pdb
+D:\Projects\WM\WMServer\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\NDapper.pdb
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csprojAssemblyReference.cache
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.AssemblyInfoInputs.cache
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.AssemblyInfo.cs
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CoreCompileInputs.cache
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CopyComplete
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.dll
+D:\Projects\WM\WMServer\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.pdb
