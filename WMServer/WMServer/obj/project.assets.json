@@ -4188,8 +4188,8 @@
     },
     "AuthLibrary/1.0.0": {
       "type": "project",
-      "path": "../../../../AhtubaCore/AuthLibrary/AuthLibrary.csproj",
-      "msbuildProject": "../../../../AhtubaCore/AuthLibrary/AuthLibrary.csproj"
+      "path": "../AuthLibrary/AuthLibrary.csproj",
+      "msbuildProject": "../AuthLibrary/AuthLibrary.csproj"
     },
     "ConnectionManager/1.0.0": {
       "type": "project",
@@ -4228,11 +4228,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj",
+      "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj",
       "projectName": "WMServer",
-      "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj",
+      "projectPath": "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj",
       "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\obj\\",
+      "outputPath": "D:\\Projects\\WM2\\WMServer\\WMServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4252,11 +4252,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj": {
-              "projectPath": "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj"
+            "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj"
             },
-            "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj": {
-              "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj"
+            "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Cq3sNV3YrLV9iw9FxzjZ2mCI9MtFv4bKIKGturcaK8C5hcMDaw9Aps4tuuFGQkR8Fud+d06yb0+A2S2auRr92Q==",
+  "dgSpecHash": "7fdsDSJxYTWkBlZziRLXQckl6hycFZLXdKtFVlSv1orJDfg3ctv22OP5YTED0w4Top9untfadWUEkki9PtNSlA==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj",
+  "projectFilePath": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Petr\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

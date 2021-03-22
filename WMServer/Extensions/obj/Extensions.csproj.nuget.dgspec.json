@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {}
+    "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj",
         "projectName": "Extensions",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -114,11 +114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
+      "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
       "projectName": "ConnectionManager",
-      "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
+      "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
       "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\obj\\",
+      "outputPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

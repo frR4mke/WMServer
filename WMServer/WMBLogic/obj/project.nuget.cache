@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ftq7+9Fa/EVA3p/RiRmyWLGf33+X/QAbbKzwlhiKPsnAJUKbBiPvHxKqUO6VF4qPVe8BS24Hbvf1G20JJfK42A==",
+  "dgSpecHash": "fip2V7EIsn2xAF5+KJAfqd+AxFkNdojgwEg5rRN2utgSk24WxwyUdJGuH0puv1N0uZ01vmlcScG005H3eGLv0g==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj",
+  "projectFilePath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Petr\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

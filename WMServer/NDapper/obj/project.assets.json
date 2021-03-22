@@ -686,11 +686,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj",
+      "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
       "projectName": "NDapper",
-      "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj",
+      "projectPath": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
       "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\obj\\",
+      "outputPath": "D:\\Projects\\WM2\\WMServer\\NDapper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -710,11 +710,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
-              "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
+            "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
             },
-            "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {
-              "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj"
+            "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj"
             }
           }
         }

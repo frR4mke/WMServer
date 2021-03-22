@@ -7,3 +7,12 @@ D:\Projects\WM\WMServer\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.A
 D:\Projects\WM\WMServer\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csproj.CoreCompileInputs.cache
 D:\Projects\WM\WMServer\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.dll
 D:\Projects\WM\WMServer\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.pdb
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\netcoreapp3.1\Extensions.deps.json
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\netcoreapp3.1\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\netcoreapp3.1\Extensions.pdb
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csprojAssemblyReference.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.pdb

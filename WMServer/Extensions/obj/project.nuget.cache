@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wJO0la3fgeMXETUEwSLy2WHjB4VcYERATKGKtmI+t/LWxCMAyPe4SUwWoAsNeB3udxHlxmDzJ9VvZUt45L2l2g==",
+  "dgSpecHash": "0Fkz3ZF9y5xcA391tUM0lyoa2nKQnNg+qX9SYbtPQXm1K8YK9V9J9hT+nTgqt8dXpb4++6xvlDLum5L/PIzk5Q==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj",
+  "projectFilePath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pl+KDbJCcYpWzCkk5P5lEhC2pRU8c7EYqC+fRzkmO+ePJutIogXWhGTdJpUkHkpsuoL0nCJMyiSvNDi67dBunQ==",
+  "dgSpecHash": "GF3J1SNAC3WE8wb/ELHJHUe6XXU53kYaTdOw5R9/bjrT8CpI908BPK7yJBy1fcSzhJF0M7TMz7v/+uzjQfjIWw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
+  "projectFilePath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

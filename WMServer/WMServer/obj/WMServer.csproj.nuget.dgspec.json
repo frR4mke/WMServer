@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj": {}
+    "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj",
         "projectName": "AuthLibrary",
-        "projectPath": "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\AhtubaCore\\AuthLibrary\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -72,14 +72,14 @@
         }
       }
     },
-    "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
         "projectName": "ConnectionManager",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -135,14 +135,14 @@
         }
       }
     },
-    "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj",
         "projectName": "Extensions",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -192,14 +192,14 @@
         }
       }
     },
-    "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
         "projectName": "NDapper",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\NDapper\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -219,11 +219,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
+              "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
               },
-              "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj"
+              "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj"
               }
             }
           }
@@ -270,14 +270,14 @@
         }
       }
     },
-    "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj",
         "projectName": "WMBLogic",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -297,14 +297,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
+              "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
               },
-              "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\Extensions\\Extensions.csproj"
+              "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\Extensions\\Extensions.csproj"
               },
-              "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\NDapper\\NDapper.csproj"
+              "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj"
               }
             }
           }
@@ -337,14 +337,14 @@
         }
       }
     },
-    "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj": {
+    "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj",
+        "projectUniqueName": "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj",
         "projectName": "WMServer",
-        "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\WMServer.csproj",
+        "projectPath": "D:\\Projects\\WM2\\WMServer\\WMServer\\WMServer.csproj",
         "packagesPath": "C:\\Users\\Petr\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMServer\\obj\\",
+        "outputPath": "D:\\Projects\\WM2\\WMServer\\WMServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -364,11 +364,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj": {
-                "projectPath": "D:\\Projects\\AhtubaCore\\AuthLibrary\\AuthLibrary.csproj"
+              "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\AuthLibrary\\AuthLibrary.csproj"
               },
-              "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj": {
-                "projectPath": "D:\\Projects\\WM\\WMServer\\WMServer\\WMBLogic\\WMBLogic.csproj"
+              "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj": {
+                "projectPath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj"
               }
             }
           }
