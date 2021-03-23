@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthLibrary\AuthLibrary.csproj" />
+    <ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />
     <ProjectReference Include="..\WMBLogic\WMBLogic.csproj" />
   </ItemGroup>
 

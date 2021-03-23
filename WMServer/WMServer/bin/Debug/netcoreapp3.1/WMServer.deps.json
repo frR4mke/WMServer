@@ -25,6 +25,7 @@
       "WMServer/1.0.0": {
         "dependencies": {
           "AuthLibrary": "1.0.0",
+          "ConnectionManager": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.13",
           "Microsoft.Extensions.Configuration": "5.0.0",
           "Microsoft.Extensions.DependencyInjection": "5.0.1",
