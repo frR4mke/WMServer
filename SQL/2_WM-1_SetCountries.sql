@@ -1,0 +1,13 @@
+update Products set country = N'Германия' where product_title = 'HEMSTEDT DH'
+update Products set country = N'Германия' where product_title = 'HEMSTEDT DR'
+update Products set country = N'Германия' where product_title = 'HEMSTEDT BR-IM'
+update Products set country = N'Германия' where product_title = 'HEMSTEDT BRF-IM'
+update Products set country = N'Германия' where product_title = 'HEMSTEDT DAS 30'
+update Products set country = N'Германия' where product_title = 'HEMSTEDT FS 10'
+
+update Products set subProductType_id = 1 where product_title = 'HEMSTEDT DR'
+update Products set subProductType_id = 1 where product_title = 'HEMSTEDT DH'
+update Products set subProductType_id = 1 where product_title = 'HEMSTEDT BRF-IM'
+update Products set subProductType_id = 1 where product_title = 'HEMSTEDT DAS 30'
+update Products set subProductType_id = 1 where product_title = 'HEMSTEDT FS 10'
+update Products set subProductType_id = 2 where product_title = 'HEMSTEDT BR-IM'

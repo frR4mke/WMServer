@@ -1,7 +1,5 @@
 ﻿using NDapper.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using WMBLogic.Models.DB;
 
 namespace WMBLogic.Repositories._Products

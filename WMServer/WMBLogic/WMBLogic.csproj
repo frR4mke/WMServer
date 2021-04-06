@@ -1,18 +1,29 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />
-    <ProjectReference Include="..\Extensions\Extensions.csproj" />
-    <ProjectReference Include="..\NDapper\NDapper.csproj" />
-  </ItemGroup>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\DTO\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />
+		<ProjectReference Include="..\Extensions\Extensions.csproj" />
+		<ProjectReference Include="..\NDapper\NDapper.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Embedded\DTO\" />
+		<None Remove="Embedded\DTO\HeatingFloorFilter.sql" />
+		<None Remove="Embedded\DTO\DTOProducts.sql" />
+		<None Remove="Embedded\DTO\DTOProductOptions.sql" />
+
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="Embedded\DTO\HeatingFloorFilter.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOProducts.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOProductOptions.sql" />
+
+	</ItemGroup>
+	
 
 </Project>

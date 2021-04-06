@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
+using static Dapper.SqlMapper;
 
 namespace NDapper.Interfaces
 {
 	public interface IDataBase
 	{
-		IEnumerable<T> ExucuteQuery<T>(string query);
+		IEnumerable<T> ExucuteQuery<T>(string query, object param = null);		
 
 	}
 	public interface IDapperRepository<T>

@@ -35,7 +35,7 @@ namespace WMServer
 
 			services.ConfigureAuthentication(Configuration);
 
-			services.RegisterComponents();
+			services.RegisterComponents(Configuration);
 
 			services.AddControllers();
 

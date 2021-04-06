@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 using NDapper.Interfaces;
 using Extensions;
+using static Dapper.SqlMapper;
 
 namespace NDapper
 {
@@ -31,16 +32,16 @@ namespace NDapper
 		protected DBType DBType = DBType.MSSQL;
 		protected IQueryTranslatorDialect Dialect => QueryHelper.CreateDialect(DBType);
 
-		public IEnumerable<T> ExucuteQuery<T>(string query)
-		{
+		public IEnumerable<T> ExucuteQuery<T>(string query, object param = null)
+		{			
 			using (IDbConnection db = new SqlConnection(connectionManager.GetConnectionString()))
-			{
-				IEnumerable<T> result = db.Query<T>(query).ToList();
+			{				
+				IEnumerable<T> result = db.Query<T>(query, param).ToList();
 
 				return result;
 			}
 		}
-
+		
 	}
 	/// <summary>
 	/// CRUD Operation

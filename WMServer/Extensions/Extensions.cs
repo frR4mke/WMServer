@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Extensions
 {
@@ -25,4 +27,22 @@ namespace Extensions
 		}
 		
 	}
+    public static class Enumerations
+    {
+        private static string GetDescriptionAttribute(Enum value)
+        {
+            var fi = value.GetType().GetField(value.ToString());
+            if (fi == null) return "";
+            var attributes = fi.GetCustomAttributes<DescriptionAttribute>(false);
+            return (attributes != null && attributes.Count() > 0) ? attributes.First().Description : null;
+        }
+
+        public static string GetEnumDescription(Enum value)
+        {
+            var p = GetDescriptionAttribute(value);
+            return p ?? value.ToString();
+        }
+
+        
+    }
 }

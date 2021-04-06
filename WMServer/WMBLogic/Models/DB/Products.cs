@@ -25,7 +25,11 @@ namespace WMBLogic.Models.DB
         public int sort_order { get; set; }
         [Column]
         public int productType_id { get; set; }
-        
+        [Column]
+        public string country { get; set; }
+        [Column]
+        public int subProductType_id { get; set; }
+
 
     }
 }
