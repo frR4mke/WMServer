@@ -17,8 +17,8 @@ namespace WMBLogic.Services
 	{
 		readonly FilterService filterService;
 		readonly IDataBase database;
-
 		readonly IRepository<ProductOptions> productOptionsrepository;
+
 		public ProductsService(IDataBase database, IRepository<ProductOptions> productOptionsrepository, FilterService filterService)
 		{
 			this.database = database;

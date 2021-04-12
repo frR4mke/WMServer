@@ -19,17 +19,21 @@ namespace WMServer.Configure
 			//Dapper
 			services.AddScoped<IDataBase, NDapper.Dapper>();
 			services.AddScoped<IDapperRepository<Products>, DapperRepository<Products>>();
-			services.AddScoped<IDapperRepository<ProductOptions>, DapperRepository<ProductOptions>>();			
+			services.AddScoped<IDapperRepository<ProductOptions>, DapperRepository<ProductOptions>>();
+			services.AddScoped<IDapperRepository<Orders>, DapperRepository<Orders>>();
+			services.AddScoped<IDapperRepository<OrdersDetails>, DapperRepository<OrdersDetails>>();
 			//Repository
 			services.AddScoped<IRepository<Products>, ProductRepository>();
 			services.AddScoped<IRepository<ProductOptions>, ProductOptionsRepository>();
+			services.AddScoped<IRepository<Orders>, OrderRepository>();
+			services.AddScoped<IRepository<OrdersDetails>, OrdersDetailsRepository>();
 			//Services
 			services.AddScoped<ProductsService, ProductsService>();
 			services.AddScoped<FilterService, FilterService>();
-			services.AddScoped<HeatingFloorService, HeatingFloorService>();
-			services.AddScoped<QueryService, QueryService>();
-			
-			
+			services.AddScoped<HeatingFloorService, HeatingFloorService>();		
+			services.AddScoped<OrderService, OrderService>();
+
+
 			//DbConnection
 			services.AddScoped<IDbConnection>(x => {
 				var conn = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
