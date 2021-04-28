@@ -14,6 +14,7 @@ namespace WMServer.Controllers
 	[ApiController]
 	public class OrdersController : ControllerBase
 	{
+		
 		readonly OrderService orderService;
 
 		public OrdersController(OrderService orderService)
@@ -37,9 +38,9 @@ namespace WMServer.Controllers
 
 		// POST api/<OrderController>
 		[HttpPost]
-		public void Post([FromBody] DTOOrder order)
+		public int Post([FromBody] DTOFormOrder formOrder)
 		{
-			this.orderService.SaveOrder(order);
+			return this.orderService.SaveOrder(formOrder);
 		}
 
 		// PUT api/<OrderController>/5

@@ -30,3 +30,7 @@ D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CoreCo
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CopyComplete
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.dll
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.pdb
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Mail.dll
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Mail.pdb
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\ErrorLogger.dll
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\ErrorLogger.pdb

@@ -2,27 +2,32 @@
 
 	<PropertyGroup>
 		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<LangVersion>9</LangVersion>
 
 	</PropertyGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />
 		<ProjectReference Include="..\Extensions\Extensions.csproj" />
+		<ProjectReference Include="..\Mail\Mail.csproj" />
 		<ProjectReference Include="..\NDapper\NDapper.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Folder Include="Embedded\DTO\" />
-		<None Remove="Embedded\DTO\HeatingFloorFilter.sql" />
+		<None Remove="Embedded\DTO\Filter.sql" />
 		<None Remove="Embedded\DTO\DTOProducts.sql" />
 		<None Remove="Embedded\DTO\DTOProductOptions.sql" />
+		<None Remove="Embedded\DTO\DTOProductView.sql" />
+		<None Remove="Embedded\DTO\DTOOrder.sql" />
 
 	</ItemGroup>
 	<ItemGroup>
-		<EmbeddedResource Include="Embedded\DTO\HeatingFloorFilter.sql" />
+		<EmbeddedResource Include="Embedded\DTO\Filter.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProducts.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProductOptions.sql" />
-
+		<EmbeddedResource Include="Embedded\DTO\DTOProductView.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOOrder.sql" />
 	</ItemGroup>
 	
 

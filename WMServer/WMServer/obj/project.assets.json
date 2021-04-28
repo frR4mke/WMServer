@@ -14,6 +14,19 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
+      "Dapper-QueryBuilder/1.0.8": {
+        "type": "package",
+        "dependencies": {
+          "Dapper": "2.0.35",
+          "Microsoft.CSharp": "4.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/DapperQueryBuilder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/DapperQueryBuilder.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.13": {
         "type": "package",
         "dependencies": {
@@ -29,7 +42,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.CSharp/4.5.0": {
+      "Microsoft.CSharp/4.7.0": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -82,6 +95,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Options/5.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "Microsoft.Extensions.Primitives": "5.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.dll": {}
         }
       },
       "Microsoft.Extensions.Primitives/5.0.0": {
@@ -1000,6 +1026,19 @@
           "bin/placeholder/ConnectionManager.dll": {}
         }
       },
+      "ErrorLogger/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Dapper": "2.0.78"
+        },
+        "compile": {
+          "bin/placeholder/ErrorLogger.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ErrorLogger.dll": {}
+        }
+      },
       "Extensions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1010,12 +1049,27 @@
           "bin/placeholder/Extensions.dll": {}
         }
       },
+      "Mail/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ErrorLogger": "1.0.0",
+          "Microsoft.Extensions.Options": "5.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Mail.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Mail.dll": {}
+        }
+      },
       "NDapper/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "ConnectionManager": "1.0.0",
           "Dapper": "2.0.78",
+          "Dapper-QueryBuilder": "1.0.8",
           "Extensions": "1.0.0",
           "Microsoft.Extensions.Configuration": "5.0.0",
           "System.Data.SqlClient": "4.8.2"
@@ -1033,6 +1087,7 @@
         "dependencies": {
           "ConnectionManager": "1.0.0",
           "Extensions": "1.0.0",
+          "Mail": "1.0.0",
           "NDapper": "1.0.0"
         },
         "compile": {
@@ -1062,6 +1117,21 @@
         "lib/netstandard2.0/Dapper.xml"
       ]
     },
+    "Dapper-QueryBuilder/1.0.8": {
+      "sha512": "ZnD5ywEaC4RQDq5CyXxnvfN2DkK+48LAoVj6XuKXyzIugdtZfACCJ0wKgy2DQTQGG6M/l2giSEwKXu+lEUu26A==",
+      "type": "package",
+      "path": "dapper-querybuilder/1.0.8",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dapper-querybuilder.1.0.8.nupkg.sha512",
+        "dapper-querybuilder.nuspec",
+        "lib/net472/DapperQueryBuilder.dll",
+        "lib/net472/DapperQueryBuilder.xml",
+        "lib/netstandard2.0/DapperQueryBuilder.dll",
+        "lib/netstandard2.0/DapperQueryBuilder.xml"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.13": {
       "sha512": "Pv5ns3MQZc7/u52BTb3g/XZBFAZ2xGwWG4r6EUusAHZ1pSiVX0lhwxF13gwPKckd116mfZ8Vo93U51Cly+kp4Q==",
       "type": "package",
@@ -1077,10 +1147,10 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-    "Microsoft.CSharp/4.5.0": {
-      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
       "type": "package",
-      "path": "microsoft.csharp/4.5.0",
+      "path": "microsoft.csharp/4.7.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1093,6 +1163,7 @@
         "lib/netcoreapp2.0/_._",
         "lib/netstandard1.3/Microsoft.CSharp.dll",
         "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
         "lib/portable-net45+win8+wp8+wpa81/_._",
         "lib/uap10.0.16299/_._",
         "lib/win8/_._",
@@ -1102,7 +1173,7 @@
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
-        "microsoft.csharp.4.5.0.nupkg.sha512",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
         "microsoft.csharp.nuspec",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
@@ -1225,6 +1296,28 @@
         "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
         "microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
         "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options/5.0.0": {
+      "sha512": "CBvR92TCJ5uBIdd9/HzDSrxYak+0W/3+yxrNg8Qm6Bmrkh5L+nu6m3WeazQehcZ5q1/6dDA7J5YdQjim0165zg==",
+      "type": "package",
+      "path": "microsoft.extensions.options/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Options.dll",
+        "lib/net461/Microsoft.Extensions.Options.xml",
+        "lib/net5.0/Microsoft.Extensions.Options.dll",
+        "lib/net5.0/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
+        "microsoft.extensions.options.5.0.0.nupkg.sha512",
+        "microsoft.extensions.options.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -4196,10 +4289,20 @@
       "path": "../ConnectionManager/ConnectionManager.csproj",
       "msbuildProject": "../ConnectionManager/ConnectionManager.csproj"
     },
+    "ErrorLogger/1.0.0": {
+      "type": "project",
+      "path": "../ErrorLogger/ErrorLogger.csproj",
+      "msbuildProject": "../ErrorLogger/ErrorLogger.csproj"
+    },
     "Extensions/1.0.0": {
       "type": "project",
       "path": "../Extensions/Extensions.csproj",
       "msbuildProject": "../Extensions/Extensions.csproj"
+    },
+    "Mail/1.0.0": {
+      "type": "project",
+      "path": "../Mail/Mail.csproj",
+      "msbuildProject": "../Mail/Mail.csproj"
     },
     "NDapper/1.0.0": {
       "type": "project",
@@ -4216,6 +4319,8 @@
     ".NETCoreApp,Version=v3.1": [
       "AuthLibrary >= 1.0.0",
       "ConnectionManager >= 1.0.0",
+      "ErrorLogger >= 1.0.0",
+      "Mail >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.13",
       "Microsoft.Extensions.Configuration >= 5.0.0",
       "Microsoft.Extensions.DependencyInjection >= 5.0.1",
@@ -4258,6 +4363,12 @@
             },
             "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj": {
               "projectPath": "D:\\Projects\\WM2\\WMServer\\ConnectionManager\\ConnectionManager.csproj"
+            },
+            "D:\\Projects\\WM2\\WMServer\\ErrorLogger\\ErrorLogger.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\ErrorLogger\\ErrorLogger.csproj"
+            },
+            "D:\\Projects\\WM2\\WMServer\\Mail\\Mail.csproj": {
+              "projectPath": "D:\\Projects\\WM2\\WMServer\\Mail\\Mail.csproj"
             },
             "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj": {
               "projectPath": "D:\\Projects\\WM2\\WMServer\\WMBLogic\\WMBLogic.csproj"
@@ -4306,7 +4417,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -11,6 +11,7 @@ using System.Linq.Expressions;
 using NDapper.Interfaces;
 using Extensions;
 using static Dapper.SqlMapper;
+using DapperQueryBuilder;
 
 namespace NDapper
 {
@@ -32,16 +33,34 @@ namespace NDapper
 		protected DBType DBType = DBType.MSSQL;
 		protected IQueryTranslatorDialect Dialect => QueryHelper.CreateDialect(DBType);
 
-		public IEnumerable<T> ExucuteQuery<T>(string query, object param = null)
-		{			
+		public IEnumerable<T> ExucuteQueryWithFilеterRange<T>(FormattableString selectClause, List<FilterRange> filterRanges)
+		{
+			
 			using (IDbConnection db = new SqlConnection(connectionManager.GetConnectionString()))
-			{				
+			{
+				QueryBuilder query = db.QueryBuilder(selectClause);
+				
+				foreach (FilterRange _filter in filterRanges)
+					query.Where($@"{_filter.field_name:raw} BETWEEN 
+                                 {_filter.field_min} AND {_filter.field_max} OR {_filter.field_name:raw} is NULL");
+				
+				return query.Query<T>();
+			}
+  
+		}
+		public IEnumerable<T> ExucuteQuery<T>(string query, object param = null)
+		{
+			using (IDbConnection db = new SqlConnection(connectionManager.GetConnectionString()))
+			{
+
 				IEnumerable<T> result = db.Query<T>(query, param).ToList();
 
 				return result;
 			}
 		}
-		
+
+		public IDapperRepository<T> Repository<T>() => new DapperRepository<T>(connectionManager);
+
 	}
 	/// <summary>
 	/// CRUD Operation
@@ -60,7 +79,7 @@ namespace NDapper
 			this.connectionManager = connectionManager;
 
 			var type = typeof(T);
-			Table = type.GetCustomAttribute<TableAttribute>()?.Name ?? type.Name.ToLower();
+			Table = type.GetCustomAttribute<System.ComponentModel.DataAnnotations.Schema.TableAttribute>()?.Name ?? type.Name.ToLower();
 
 			var props = type.GetProperties().Where(o => o.GetCustomAttribute<ColumnAttribute>() != null);
 
@@ -305,11 +324,26 @@ namespace NDapper
 			return res;
 		}
 	}
+	public class TableAttribute : Attribute
+	{
+		public string Name { get; }
+		public TableAttribute(string name)
+		{
+			Name = name;
+		}
+	}
 	public class IdentityAttribute : Attribute
 	{
 	}
 
 	public class ComputedAttribute : Attribute
 	{
+	}
+	
+	public record FilterRange
+	{
+		public string field_name { get; set; }
+		public string field_min { get; set; }
+		public string field_max { get; set; }
 	}
 }

@@ -100,3 +100,9 @@ D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csproj.CopyCo
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.dll
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.pdb
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.genruntimeconfig.cache
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\DapperQueryBuilder.dll
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\Mail.dll
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\Mail.pdb
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\ErrorLogger.dll
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\ErrorLogger.pdb

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using WMBLogic.Models.DB;
 using WMBLogic.Models.DTO;
 using WMBLogic.Models.FILTRES;
-using WMBLogic.Repositories;
 using WMBLogic.Services;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -36,68 +35,38 @@ namespace WMServer.Controllers
             return productsService.GetDTOProducts();
         }
 
-        [Route("GetProductOption/{productOptions_id}")]
-        public ProductOptions GetProductOption(int productOptions_id)
-        {
-            return productsService.GetProductOption(productOptions_id);
-        }
-
-
         [Route("GetProductOptionsList/{product_id}")]
         public IEnumerable<DTOProductOptions> GetProductOptionsList(int product_id)
         {
             return productsService.GetProductOptionsList(product_id);
         }
 
-        [Route("GetHeatingFloorFilter/{productType_id}")]
-        public HeatingFloorFilter GetHeatingFloorFilter(int productType_id)
+        [Route("GetFilter/{productType_id}")]
+        public Filter GetFilter(int productType_id)
         {
-            return filterService.GetHeatingFloorFilter(productType_id);
+            return filterService.GetFilter(productType_id);
         }
 
-        #region HeatingFloorFilter
+        [Route("GetProductView/{product_id}")]
+        public DTOProductView GetProductView(int product_id)
+        {
+            return productsService.GetProductView(product_id);
+        }
 
         [HttpPost]
-        [Route("GetHeatingFloorProductOptionFiltred/{product_id}")]
-        public IEnumerable<DTOProductOptions> GetHeatingFloorProductOptionFiltred([FromBody] HeatingFloorFilter filter,
+        [Route("GetProductOptionFiltred/{product_id}")]
+        public IEnumerable<DTOProductOptions> GetProductOptionFiltred([FromBody] Filter filter,
             int product_id)
         {
-            return heatingFloorService.GetProductOptionFiltred(product_id, filter);
+            return productsService.GetProductOptionFiltred(product_id, filter);
         }
 
         [HttpPost]
-        [Route("GetProdutsForCatalog/{productType_id}")]
-        public IEnumerable<DTOProducts> GetProdutsForCatalog([FromBody] HeatingFloorFilter filter, int productType_id)
+        [Route("GetProductForCatalog/{productType_id}")]
+        public IEnumerable<DTOProducts> GetProductForCatalog([FromBody] Filter filter, int productType_id)
         {
-            return heatingFloorService.GetProdutsForCatalog(productType_id, filter);
+            return productsService.GetProductForCatalog(productType_id, filter);
         }
 
-        #endregion
-
-
-        // GET api/<ProductsController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<ProductsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<ProductsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ProductsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

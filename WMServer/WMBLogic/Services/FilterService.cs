@@ -9,6 +9,7 @@ using WMBLogic.Models.DTO;
 using WMBLogic.Models.INTERFACES;
 using System.Data;
 using Dapper;
+using NDapper;
 
 namespace WMBLogic.Services
 {
@@ -18,75 +19,95 @@ namespace WMBLogic.Services
         readonly IDbConnection dbConnection;
 
         public FilterService(IDataBase database, IDbConnection dbConnection)
-		{
-			this.dbConnection = dbConnection;
+        {
+            this.dbConnection = dbConnection;
+            this.database = database;
+        }
+        public Filter GetFilter(int productType_id)
+        {
+            _Filter _filter = _GetFilter(productType_id);
 
-            this.database = database;		
-		}
-        public HeatingFloorFilter GetHeatingFloorFilter(int productType_id)
-		{
-            string resultSql = "Embedded.DTO.HeatingFloorFilter.sql";
+            return new Filter
+            {
+                manufacturer = _filter.Manufacturers,
+                rangeFilter = new List<FilterRange>()
+                {
+                    new()
+                    {
+                        field_name = "price",
+                        field_min = _filter.MinMax.price_min.ToString(),
+                        field_max = _filter.MinMax.price_max.ToString()
+                    },
+                    new()
+                    {
+                        field_name = "power",
+                        field_min = _filter.MinMax.power_min.ToString(),
+                        field_max = _filter.MinMax.power_max.ToString()
+                    },
+                    new()
+                    {
+                        field_name = "layingArea",
+                        field_min = _filter.MinMax.layingArea_min.ToString().Replace(',', '.'),
+                        field_max = _filter.MinMax.layingArea_max.ToString().Replace(',', '.')
+                    },
+                    new()
+                    {
+                        field_name = "wireLength",
+                        field_min = _filter.MinMax.wireLength_min.ToString().Replace(',', '.'),
+                        field_max = _filter.MinMax.wireLength_max.ToString().Replace(',', '.')
+                    },
+                    new()
+                    {
+                        field_name = "matLength",
+                        field_min = _filter.MinMax.matLength_min.ToString().Replace(',', '.'),
+                        field_max = _filter.MinMax.matLength_max.ToString().Replace(',', '.')
+                    }
+                }
+            };
+        }
 
-            string sql = EmbeddedResourceManager.GetString(typeof(HeatingFloorFilter), resultSql);
+        private _Filter _GetFilter(int productType_id)
+        {
+            string resultSql = "Embedded.DTO.Filter.sql";
 
+            string sql = EmbeddedResourceManager.GetString(typeof(Filter), resultSql);
 
-			SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new { productType_id  });
+            SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new {productType_id});
 
-            var minMax = result.Read<(decimal power_min, decimal power_max, decimal price_min, decimal price_max, decimal
-                    layingArea_min, decimal layingArea_max)>().FirstOrDefault();
+            var (powerMin, powerMax, priceMin, priceMax, layingAreaMin, layingAreaMax, wireLengthMin, wireLengthMax, matLengthMin, matLengthMax) = result
+                .Read<(decimal power_min, decimal power_max, decimal price_min, decimal price_max, decimal
+                    layingArea_min, decimal layingArea_max, decimal wireLength_min, decimal wireLength_max, decimal
+                    matLength_min, decimal matLength_max)>()
+                .FirstOrDefault();
 
+            List<(string man_titile, int man_id)> manufacturers =
+                result.Read<(string man_titile, int man_id)>().ToList();
 
             List<Manufacturers> manufacturersList = new List<Manufacturers>();
 
-			List<(string man_titile, int man_id)> manufacturers = result.Read<(string man_titile,int man_id)>().ToList();
-
-            manufacturers.ForEach(x => {
-                manufacturersList.Add(new Manufacturers {
+            manufacturers.ForEach(x =>
+            {
+                manufacturersList.Add(new Manufacturers
+                {
                     manufacturer_id = x.man_id,
                     manufacturer_name = x.man_titile
                 });
             });
 
-            HeatingFloorFilter filter = new HeatingFloorFilter() {
-                power_max = minMax.power_max,
-                power_min = minMax.power_min,
-                layingArea_max = minMax.layingArea_max,
-                layingArea_min = minMax.layingArea_min,
-                price_max = minMax.price_max,
-                price_min = minMax.price_min,
-                manufacturer = manufacturersList.ToArray()
+            return new _Filter
+            {
+                MinMax = (powerMin, powerMax, priceMin, priceMax, layingAreaMin, layingAreaMax, wireLengthMin, wireLengthMax, matLengthMin, matLengthMax),
+                Manufacturers = manufacturersList
             };
-
-            return filter;
-
         }
-        
 
-        public IEnumerable<DTOProductOptions> ApplyHeatingFloorFilter(HeatingFloorFilter _filter,
-            IEnumerable<DTOProductOptions> products)
+        public class _Filter
         {
-            if (_filter != null)
-            {
-                return products.Where(x =>
-                    x.power >= (_filter.power_min ?? decimal.MinValue) &&
-                    x.power <= (_filter.power_max ?? decimal.MaxValue) &&
-                    x.price >= (_filter.price_min ?? decimal.MinValue) &&
-                    x.price <= (_filter.price_max ?? decimal.MaxValue) &&
-                    x.layingArea >= (_filter.layingArea_min ?? decimal.MinValue) &&
-                    x.layingArea <= (_filter.layingArea_max ?? decimal.MaxValue));
-            }
+            public (decimal power_min, decimal power_max, decimal price_min, decimal price_max, decimal layingArea_min,
+                decimal layingArea_max, decimal wireLength_min, decimal wireLength_max, decimal matLength_min, decimal
+                matLength_max) MinMax { get; set; }
 
-            return products;
-        }
-        public IEnumerable<DTOProducts> ApplyManyfacturersFilter(int[] manufacturers, IEnumerable<DTOProducts> products)
-		{
-            if (manufacturers.Length > 0)
-            {
-                return products.Where(x => manufacturers.Contains(x.manufacturer_id));
-            }
-            else
-                return products;
-
+            public List<Manufacturers> Manufacturers { get; set; }
         }
     }
 }

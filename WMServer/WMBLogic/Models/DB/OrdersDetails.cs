@@ -15,7 +15,7 @@ namespace WMBLogic.Models.DB
         [Column]
         public int quantity { get; set; }
         [Column]
-        public int price { get; set; }
+        public decimal price { get; set; }
 
     }
 }

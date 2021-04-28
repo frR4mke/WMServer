@@ -17,9 +17,11 @@ namespace WMBLogic.Models.DB
         [Column]
         public decimal power { get; set; }
         [Column]
-        public decimal layingArea { get; set; }
+        public decimal? layingArea { get; set; }
         [Column]
-        public decimal wireLength { get; set; }
+        public decimal? wireLength { get; set; }
+        [Column]
+        public decimal? matLength { get; set; }
         [Column]
         public decimal price { get; set; } 
 

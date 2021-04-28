@@ -1,67 +1,109 @@
 ﻿using NDapper.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Extensions;
+using Mail;
+using WMBLogic.Embedded;
 using WMBLogic.Models.DB;
 using WMBLogic.Models.DTO;
-using WMBLogic.Repositories;
-using WMBLogic.Repositories._Products;
+using WMBLogic.Models.ENUMS;
 
 namespace WMBLogic.Services
 {
-	public class OrderService
-	{
-		readonly IDapperRepository<Orders> orderRepository;
-		readonly IDapperRepository<OrdersDetails> ordersDetailsRepository;
+    public class OrderService
+    {
+        readonly MailHandler mailHandler;
+        private readonly IDataBase database;
 
-		public OrderService(IDapperRepository<Orders> orderRepository, IDapperRepository<OrdersDetails> ordersDetailsRepository)
-		{
-			this.orderRepository = orderRepository;
-			this.ordersDetailsRepository = ordersDetailsRepository;
-		}
+        public OrderService(IDataBase database, MailHandler mailHandler)
+        {
+            this.database = database;
+            this.mailHandler = mailHandler;
+        }
 
-		public void SaveOrder(DTOOrder _order)
-		{
-			Orders order = GetOrder(_order);
+        public int SaveOrder(DTOFormOrder formOrder)
+        {
+            var repOrders = database.Repository<Orders>();
+            var repOrdersDetails = database.Repository<OrdersDetails>();
 
-			orderRepository.CreateEntity(order);
+            Orders order = CreateOrder(formOrder);
 
-			OrdersDetails[] ordersDetails = GetOrdersDetails(_order, order.order_id);
+            repOrders.CreateEntity(order);
 
-			for (int i = 0; i < ordersDetails.Length; i++)
-			{
-				ordersDetailsRepository.CreateEntity(ordersDetails[i]);
-			}
+            OrdersDetails[] ordersDetails = GetOrdersDetails(formOrder, order.order_id);
 
-		}
-		private Orders GetOrder(DTOOrder order)
-		{
-			return new Orders {
-				fio = order.fio,
-				phoneNumber = order.phoneNumber,
-				payment = order.payment,
-				city = order.city,
-				delivery = order.delivery,
-				deliveryAddress = order.deliveryAddress,
-				comment = order.comment
-			};
-		}
-		private OrdersDetails[] GetOrdersDetails(DTOOrder order, int order_id)
-		{
-			OrdersDetails[] result = new OrdersDetails[order.ordersDetails.Length];
+            for (int i = 0; i < ordersDetails.Length; i++)
+            {
+                repOrdersDetails.CreateEntity(ordersDetails[i]);
+            }
 
-			for (int i = 0; i < order.ordersDetails.Length; i++)
-			{
-				result[i] = new OrdersDetails {
-					product_id = order.ordersDetails[i].product_id,
-					price = order.ordersDetails[i].price,
-					quantity = order.ordersDetails[i].quantity,
-					order_id = order_id
+            SendEmailToAdmin(order.order_id);
+            
+            return order.order_id;
 
-				};
-			}
+            
+        }
 
-			return result;
-		}
-	}
+        private void SendEmailToAdmin(int order_id)
+        {
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), DTOPath.DTOOrder);
+            
+            DTOOrder productOptionList = database.ExucuteQuery<DTOOrder>(sql, new {@order_id = order_id}).FirstOrDefault();
+
+            string messageBody = $"Статус заказа {Enumerations.GetEnumDescription(productOptionList.orderstate)}." +
+                                 Environment.NewLine +
+                                 $"Способ оплаты: {productOptionList.payment_title}" +
+                                 Environment.NewLine +
+                                 $"Способ доставки: {productOptionList.delivery_title}" +
+                                 Environment.NewLine +
+                                 $"Адресс доставки: {productOptionList.deliveryAddress}" +
+                                 Environment.NewLine +
+                                 $"Город: {productOptionList.city_title}" +
+                                 Environment.NewLine +
+                                 $"Номер телефона: {productOptionList.phoneNumber}" +
+                                 Environment.NewLine +
+                                 $"Сумма: {productOptionList.sum_price}";
+            
+            string messageSubject = $"Создан заказ. №: {order_id}.";
+
+            mailHandler.SendToYourSelf(messageSubject, messageBody);
+        }
+
+        private Orders CreateOrder(DTOFormOrder formOrder)
+        {
+            return new Orders
+            {
+                fio = formOrder.fio,
+                phoneNumber = formOrder.phoneNumber,
+                payment_id = formOrder.payment_id,
+                city_id = formOrder.city_id,
+                delivery_id = formOrder.delivery_id,
+                deliveryAddress = formOrder.deliveryAddress,
+                comment = formOrder.comment,
+                device = formOrder.device,
+                orderdatetime = DateTime.Now,
+                orderstate = (int)OrderState.InProcessing
+            };
+        }
+
+        private OrdersDetails[] GetOrdersDetails(DTOFormOrder formOrder, int order_id)
+        {
+            OrdersDetails[] result = new OrdersDetails[formOrder.ordersDetails.Length];
+
+            for (int i = 0; i < formOrder.ordersDetails.Length; i++)
+            {
+                result[i] = new OrdersDetails
+                {
+                    product_id = formOrder.ordersDetails[i].product_id,
+                    price = formOrder.ordersDetails[i].price,
+                    quantity = formOrder.ordersDetails[i].quantity,
+                    order_id = order_id
+                };
+            }
+
+            return result;
+        }
+    }
 }

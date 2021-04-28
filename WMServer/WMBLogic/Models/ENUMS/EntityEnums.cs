@@ -26,6 +26,15 @@ namespace WMBLogic.Models.ENUMS
 		HeatedFloorScreed = 2,
 		[Description("Теплый пол под ламинат и паркетную")]
 		HeatedFloorUnderLaminate = 3
+	}
 
+	public enum OrderState
+	{
+		[Description("В обработке")]
+		InProcessing = 1,
+		[Description("Подтвержден")]
+		Confirmed = 2,
+		[Description("Доставлен и оплачен")]
+		DeliveredAndPaid = 3
 	}
 }

@@ -1,10 +1,5 @@
 
-insert into Manufacturers values('HEMSTEDT')
-insert into Manufacturers values('HEMSTEDT DI SI H')
-insert into Manufacturers values('FENIX ULTRA')
-insert into Manufacturers values('FENIX')
-insert into Manufacturers values('IN-THERM')
-insert into Manufacturers values('UNIFLOOR')
+
 
 insert into Products (product_title,quantity,manufacturer_id,description,sort_order,full_product_title) 
 values(N'HEMSTEDT DH',1,1,N'ћаты DH и тонкий кабель DR используютс€, когда необходимо минимально подн€ть уровень пола. ћонтаж производитс€ на готовую ст€жку под напольное покрытие в клеевой раствор или самовыравнивающую смесь.  абель дл€ мата DR имеет унирсальное назначение. «а счет различного шага укладки этот кабель можно использовать как дл€ полноценного отоплени€ (до 250 ¬т/м.кв.), так и дл€ укладки под дерев€нные напольные покрыти€ (100 ¬т/м.кв.).  абель утапливаетс€ в клеевой раствор, не повыша€ высоту пола. ѕеред залитием ст€жки рекомендуетс€ укладывать теплоизол€тор. »меет три преимущества над кабелем дл€ укладки в ст€жку: 1) более быстрый прогрев пола (незначительно экономичнее); 2) более простой монтаж; 3) имеет более высокую температуру плавлени€ внутренней изол€ции.',

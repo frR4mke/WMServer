@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OGQibjnwvKzbq9qVBGDkbHVclKuy1wVlaw7kUs3brYowp0CiwCfKXuV0cCKCQqQlPZcCe1tOjlfV+kP6989ZVw==",
+  "dgSpecHash": "KXPxZDTQ0a9tnxNakeFml5mtBGM1wvBNDHAt3Petnv5WKsXsmA1QfxQsJ9u5iMOMbCa4kR6uec90PQehKszbOw==",
   "success": true,
   "projectFilePath": "D:\\Projects\\WM2\\WMServer\\NDapper\\NDapper.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Petr\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\Petr\\.nuget\\packages\\dapper-querybuilder\\1.0.8\\dapper-querybuilder.1.0.8.nupkg.sha512",
+    "C:\\Users\\Petr\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Petr\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512",
