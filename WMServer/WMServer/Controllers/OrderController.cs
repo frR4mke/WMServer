@@ -22,37 +22,24 @@ namespace WMServer.Controllers
 			this.orderService = orderService;
 		}
 
-		// GET: api/<OrderController>
-		[HttpGet]
-		public IEnumerable<string> Get()
-		{
-			return new string[] { "value1", "value2" };
-		}
-
-		// GET api/<OrderController>/5
-		[HttpGet("{id}")]
-		public string Get(int id)
-		{
-			return "value";
-		}
-
+		
 		// POST api/<OrderController>
 		[HttpPost]
 		public int Post([FromBody] DTOFormOrder formOrder)
 		{
-			return this.orderService.SaveOrder(formOrder);
+			return orderService.SaveOrder(formOrder);
 		}
 
-		// PUT api/<OrderController>/5
-		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		[Route("GetCustomerForm")]
+		public CustomerForm GetCustomerForm()
 		{
+			return orderService.GetCustomerForm();
 		}
-
-		// DELETE api/<OrderController>/5
-		[HttpDelete("{id}")]
-		public void Delete(int id)
+		[Route("GetDTOOrder")]
+		public IEnumerable<DTOOrder> GetDTOOrder()
 		{
+			return orderService.GetDTOOrder();
 		}
+		
 	}
 }

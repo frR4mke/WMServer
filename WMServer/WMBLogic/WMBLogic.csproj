@@ -20,14 +20,22 @@
 		<None Remove="Embedded\DTO\DTOProductOptions.sql" />
 		<None Remove="Embedded\DTO\DTOProductView.sql" />
 		<None Remove="Embedded\DTO\DTOOrder.sql" />
+		<None Remove="Embedded\DTO\DTOOrderByID.sql" />
+		<None Remove="Embedded\DTO\DTOCustomerForm.sql" />
+		<None Remove="Embedded\DTO\DTOOrderList.sql" />
 
+		
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="Embedded\DTO\Filter.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProducts.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProductOptions.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProductView.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOCustomerForm.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOOrderByID.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOOrder.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOOrderList.sql" />
+
 	</ItemGroup>
 	
 

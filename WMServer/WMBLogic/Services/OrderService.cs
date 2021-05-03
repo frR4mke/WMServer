@@ -1,8 +1,10 @@
 ﻿using NDapper.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+using Dapper;
 using Extensions;
 using Mail;
 using WMBLogic.Embedded;
@@ -14,13 +16,14 @@ namespace WMBLogic.Services
 {
     public class OrderService
     {
-        readonly MailHandler mailHandler;
+        private readonly MailHandler mailHandler;
         private readonly IDataBase database;
-
-        public OrderService(IDataBase database, MailHandler mailHandler)
+        readonly IDbConnection dbConnection;
+        public OrderService(IDataBase database, MailHandler mailHandler, IDbConnection dbConnection)
         {
             this.database = database;
             this.mailHandler = mailHandler;
+            this.dbConnection = dbConnection;
         }
 
         public int SaveOrder(DTOFormOrder formOrder)
@@ -40,32 +43,55 @@ namespace WMBLogic.Services
             }
 
             SendEmailToAdmin(order.order_id);
-            
-            return order.order_id;
 
-            
+            return order.order_id;
         }
 
+        public CustomerForm GetCustomerForm()
+        {
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOCustomerForm);
+            
+            SqlMapper.GridReader result = dbConnection.QueryMultiple(sql);
+
+            var test = new  CustomerForm
+            {
+                paymentMethods = result.Read<PaymentMethods>().ToArray(),
+                deliveryMethods = result.Read<DeliveryMethods>().ToArray(),
+                citiesServed = result.Read<CitiesServed>().ToArray(),
+                
+            };
+
+            return test;
+        }
+
+        public IEnumerable<DTOOrder> GetDTOOrder()
+        {
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderList);
+
+            var orders = database.ExucuteQuery<DTOOrder>(sql);
+
+            return orders;
+        }
         private void SendEmailToAdmin(int order_id)
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), DTOPath.DTOOrder);
-            
-            DTOOrder productOptionList = database.ExucuteQuery<DTOOrder>(sql, new {@order_id = order_id}).FirstOrDefault();
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderByID);
 
-            string messageBody = $"Статус заказа {Enumerations.GetEnumDescription(productOptionList.orderstate)}." +
+            DTOOrder order = database.ExucuteQuery<DTOOrder>(sql, new {@order_id = order_id}).FirstOrDefault();
+
+            string messageBody = $"Статус заказа {order.orderstate_title}." +
                                  Environment.NewLine +
-                                 $"Способ оплаты: {productOptionList.payment_title}" +
+                                 $"Способ оплаты: {order.payment_title}" +
                                  Environment.NewLine +
-                                 $"Способ доставки: {productOptionList.delivery_title}" +
+                                 $"Способ доставки: {order.delivery_title}" +
                                  Environment.NewLine +
-                                 $"Адресс доставки: {productOptionList.deliveryAddress}" +
+                                 $"Адресс доставки: {order.deliveryAddress}" +
                                  Environment.NewLine +
-                                 $"Город: {productOptionList.city_title}" +
+                                 $"Город: {order.city_title}" +
                                  Environment.NewLine +
-                                 $"Номер телефона: {productOptionList.phoneNumber}" +
+                                 $"Номер телефона: {order.phoneNumber}" +
                                  Environment.NewLine +
-                                 $"Сумма: {productOptionList.sum_price}";
-            
+                                 $"Сумма: {order.sum_price}";
+
             string messageSubject = $"Создан заказ. №: {order_id}.";
 
             mailHandler.SendToYourSelf(messageSubject, messageBody);
@@ -84,7 +110,7 @@ namespace WMBLogic.Services
                 comment = formOrder.comment,
                 device = formOrder.device,
                 orderdatetime = DateTime.Now,
-                orderstate = (int)OrderState.InProcessing
+                orderstate = (int) OrderState.InProcessing
             };
         }
 

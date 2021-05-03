@@ -1,0 +1,12 @@
+D:\Projects\WM2\WMServer\Mail\bin\Release\netcoreapp3.1\Mail.deps.json
+D:\Projects\WM2\WMServer\Mail\bin\Release\netcoreapp3.1\Mail.dll
+D:\Projects\WM2\WMServer\Mail\bin\Release\netcoreapp3.1\Mail.pdb
+D:\Projects\WM2\WMServer\Mail\bin\Release\netcoreapp3.1\ErrorLogger.dll
+D:\Projects\WM2\WMServer\Mail\bin\Release\netcoreapp3.1\ErrorLogger.pdb
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.csprojAssemblyReference.cache
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.csproj.CopyComplete
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.dll
+D:\Projects\WM2\WMServer\Mail\obj\Release\netcoreapp3.1\Mail.pdb

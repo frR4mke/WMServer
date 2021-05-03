@@ -33,7 +33,7 @@ namespace WMBLogic.Services
 
         public IEnumerable<DTOProductOptions> GetProductOptionsList(int product_id)
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), DTOPath.DTOProductOptionsSql) + " where po.product_id = @product_id";
+            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductOptionsSql) + " where po.product_id = @product_id";
 
             IEnumerable<DTOProductOptions> productOptionList = database.ExucuteQuery<DTOProductOptions>(sql, new {product_id});
 
@@ -42,7 +42,7 @@ namespace WMBLogic.Services
 
         public IEnumerable<DTOProducts> GetDTOProducts()
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), DTOPath.DTOProductSql);
+            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductSql);
 
             IEnumerable<DTOProducts> products = database.ExucuteQuery<DTOProducts>(sql);
 
@@ -51,7 +51,7 @@ namespace WMBLogic.Services
 
         public DTOProductView GetProductView(int product_id)
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), DTOPath.DTOProductViewSql);
+            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductViewSql);
 
             SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new {product_id});
 
@@ -95,7 +95,7 @@ namespace WMBLogic.Services
             IEnumerable<int> product_ids = ExucuteQueryWithFilеterRange<int>(querySelect, filter.rangeFilter);
 
 
-            string productSql = EmbeddedResourceManager.GetString(typeof(ProductsService), DTOPath.DTOProductSql) +
+            string productSql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductSql) +
                                 " where p.product_id in @product_ids and p.manufacturer_id in @manufacturer";
 
             IEnumerable<DTOProducts> products =

@@ -10,6 +10,7 @@ using WMBLogic.Models.INTERFACES;
 using System.Data;
 using Dapper;
 using NDapper;
+using WMBLogic.Embedded;
 
 namespace WMBLogic.Services
 {
@@ -70,7 +71,7 @@ namespace WMBLogic.Services
         {
             string resultSql = "Embedded.DTO.Filter.sql";
 
-            string sql = EmbeddedResourceManager.GetString(typeof(Filter), resultSql);
+            string sql = EmbeddedResourceManager.GetString(typeof(Filter), SQLPath.Filter);
 
             SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new {productType_id});
 
