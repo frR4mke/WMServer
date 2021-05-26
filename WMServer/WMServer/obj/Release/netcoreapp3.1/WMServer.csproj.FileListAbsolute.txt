@@ -55,3 +55,4 @@ D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\WMServer.csproj.Copy
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\WMServer.dll
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\WMServer.pdb
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\WMServer.genruntimeconfig.cache
+D:\Projects\WM2\WMServer\WMServer\bin\Release\netcoreapp3.1\BCrypt.Net-Next.dll

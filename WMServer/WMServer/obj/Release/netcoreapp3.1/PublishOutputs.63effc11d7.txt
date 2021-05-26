@@ -5,6 +5,7 @@ D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\WMServer.
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\WMServer.deps.json
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\WMServer.runtimeconfig.json
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\WMServer.pdb
+D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\BCrypt.Net-Next.dll
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\Dapper.dll
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\DapperQueryBuilder.dll
 D:\Projects\WM2\WMServer\WMServer\obj\Release\netcoreapp3.1\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll

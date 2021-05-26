@@ -35,9 +35,9 @@ namespace WMServer
 
 			services.ConfigureAuthentication(Configuration);
 
-			services.RegisterComponents(Configuration);
-
 			services.AddControllers();
+
+			services.RegisterComponents(Configuration);			
 
 			services.AddCors(options => options.AddPolicy(AllCors, p => p.AllowAnyOrigin()
 																			.AllowAnyMethod()

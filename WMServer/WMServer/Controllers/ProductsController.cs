@@ -2,12 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using WMBLogic.Models.DB;
+using System.Net;
 using WMBLogic.Models.DTO;
 using WMBLogic.Models.FILTRES;
 using WMBLogic.Services;
-
+using System.Web;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WMServer.Controllers
@@ -16,15 +15,13 @@ namespace WMServer.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly HeatingFloorService heatingFloorService;
-        readonly FilterService filterService;
-        readonly ProductsService productsService;
+        public FilterService filterService;
+        public ProductsService productsService;
 
         // GET: api/<ProductsController>
-        public ProductsController(HeatingFloorService heatingFloorService, FilterService filterService,
+        public ProductsController(FilterService filterService,
             ProductsService productsService)
         {
-            this.heatingFloorService = heatingFloorService;
             this.filterService = filterService;
             this.productsService = productsService;
         }
@@ -67,6 +64,5 @@ namespace WMServer.Controllers
         {
             return productsService.GetProductForCatalog(productType_id, filter);
         }
-
     }
 }

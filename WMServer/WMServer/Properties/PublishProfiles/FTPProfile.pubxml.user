@@ -8,26 +8,32 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAvD6YH+F+ekapxH11XhOCAgAAAAACAAAAAAAQZgAAAAEAACAAAABAeKDVOxYP7leU1knx29cS2F0skuUtQXK/VLQqpjlRTwAAAAAOgAAAAAIAACAAAAD4OH9XmFTfKwII9qsgjMJYAl2aeNU1Q2eynRJLTyOM1yAAAABUVH7xJlLmACJxta7ZkT6WHsMPrJs3ZgfzLJsRTaeWKEAAAABb004FBDCAluccznQM9OmnZzRnnMLB4ZV0d8/EI3ArUmlwMLtQUt+nkAGg7g/VEh0BEqoRJD2X/LBvgpFKWKaq</EncryptedPassword>
     <_PublishTargetUrl>ftp://eurofloor.somee.com/www.eurofloor.somee.com/</_PublishTargetUrl>
-    <History>True|2021-05-03T18:07:42.1921622Z;False|2021-05-03T21:05:17.4790912+03:00;True|2021-05-03T20:52:20.5848136+03:00;True|2021-05-03T20:40:04.3139611+03:00;</History>
+    <History>True|2021-05-18T15:49:40.3681682Z;True|2021-05-17T18:07:01.8835565+03:00;True|2021-05-04T12:08:53.3025835+03:00;True|2021-05-04T12:05:54.7979844+03:00;True|2021-05-04T00:20:26.8472500+03:00;False|2021-05-04T00:18:29.2630318+03:00;True|2021-05-04T00:11:39.6325004+03:00;True|2021-05-04T00:06:00.6469017+03:00;True|2021-05-03T23:54:17.6442259+03:00;True|2021-05-03T23:50:45.9677872+03:00;True|2021-05-03T23:47:31.1874770+03:00;True|2021-05-03T23:44:15.8341712+03:00;True|2021-05-03T23:41:19.1950304+03:00;True|2021-05-03T23:38:40.1197024+03:00;False|2021-05-03T23:37:14.0102033+03:00;True|2021-05-03T23:35:56.9982140+03:00;False|2021-05-03T23:34:30.8068246+03:00;True|2021-05-03T23:31:57.6142312+03:00;False|2021-05-03T23:29:27.7575234+03:00;True|2021-05-03T23:25:55.3849387+03:00;True|2021-05-03T23:23:29.3332032+03:00;True|2021-05-03T23:21:22.5498810+03:00;True|2021-05-03T23:18:52.4311064+03:00;True|2021-05-03T23:13:32.2287857+03:00;True|2021-05-03T23:10:14.4349397+03:00;False|2021-05-03T23:08:51.0904117+03:00;True|2021-05-03T23:00:12.7759301+03:00;True|2021-05-03T22:56:57.1469020+03:00;False|2021-05-03T22:55:40.1015101+03:00;True|2021-05-03T22:54:26.8499206+03:00;True|2021-05-03T22:49:30.0273479+03:00;False|2021-05-03T22:47:53.2686812+03:00;True|2021-05-03T22:43:40.3856251+03:00;False|2021-05-03T22:41:05.2292881+03:00;True|2021-05-03T22:36:41.8178705+03:00;False|2021-05-03T22:35:10.9764183+03:00;False|2021-05-03T22:34:42.4758211+03:00;True|2021-05-03T22:32:28.0708342+03:00;False|2021-05-03T22:30:37.0392133+03:00;True|2021-05-03T22:26:33.1007187+03:00;True|2021-05-03T21:07:42.1921622+03:00;False|2021-05-03T21:05:17.4790912+03:00;True|2021-05-03T20:52:20.5848136+03:00;True|2021-05-03T20:40:04.3139611+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="appsettings.Development.json">
       <publishTime>03/21/2021 14:39:50</publishTime>
     </File>
     <File Include="appsettings.json">
-      <publishTime>04/26/2021 17:38:51</publishTime>
+      <publishTime>05/16/2021 17:59:19</publishTime>
     </File>
     <File Include="AuthLibrary.dll">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="AuthLibrary.pdb">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
+    </File>
+    <File Include="BCrypt.Net-Next.dll">
+      <publishTime>11/19/2020 10:27:06</publishTime>
     </File>
     <File Include="ConnectionManager.dll">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="ConnectionManager.pdb">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
+    </File>
+    <File Include="Controllers/WeatherForecastController.cs">
+      <publishTime>05/03/2021 22:28:36</publishTime>
     </File>
     <File Include="Dapper.dll">
       <publishTime>11/17/2020 09:58:48</publishTime>
@@ -36,22 +42,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/30/2021 23:17:38</publishTime>
     </File>
     <File Include="ErrorLogger.dll">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="ErrorLogger.pdb">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="Extensions.dll">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="Extensions.pdb">
-      <publishTime>05/03/2021 20:49:30</publishTime>
+      <publishTime>05/04/2021 12:03:48</publishTime>
     </File>
     <File Include="Mail.dll">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/04/2021 12:03:49</publishTime>
     </File>
     <File Include="Mail.pdb">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/04/2021 12:03:49</publishTime>
     </File>
     <File Include="Microsoft.AspNetCore.Authentication.JwtBearer.dll">
       <publishTime>02/17/2021 22:08:22</publishTime>
@@ -75,10 +81,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/19/2020 18:48:36</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.JsonWebTokens.dll">
-      <publishTime>10/13/2020 00:21:34</publishTime>
+      <publishTime>04/26/2021 19:56:48</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Logging.dll">
-      <publishTime>10/13/2020 00:23:12</publishTime>
+      <publishTime>04/26/2021 19:59:22</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Protocols.dll">
       <publishTime>06/24/2019 19:54:24</publishTime>
@@ -87,13 +93,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2019 19:59:32</publishTime>
     </File>
     <File Include="Microsoft.IdentityModel.Tokens.dll">
-      <publishTime>10/13/2020 00:27:48</publishTime>
+      <publishTime>04/26/2021 20:04:04</publishTime>
     </File>
     <File Include="NDapper.dll">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/04/2021 12:03:49</publishTime>
     </File>
     <File Include="NDapper.pdb">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/04/2021 12:03:49</publishTime>
     </File>
     <File Include="Newtonsoft.Json.dll">
       <publishTime>01/01/2021 16:18:08</publishTime>
@@ -117,31 +123,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/20/2020 21:21:14</publishTime>
     </File>
     <File Include="System.IdentityModel.Tokens.Jwt.dll">
-      <publishTime>10/13/2020 00:20:12</publishTime>
+      <publishTime>04/26/2021 19:55:04</publishTime>
     </File>
     <File Include="web.config">
-      <publishTime>05/03/2021 21:05:32</publishTime>
+      <publishTime>05/18/2021 18:47:32</publishTime>
     </File>
     <File Include="WMBLogic.dll">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/18/2021 18:47:25</publishTime>
     </File>
     <File Include="WMBLogic.pdb">
-      <publishTime>05/03/2021 20:49:31</publishTime>
+      <publishTime>05/18/2021 18:47:25</publishTime>
     </File>
     <File Include="WMServer.deps.json">
-      <publishTime>05/03/2021 21:05:27</publishTime>
+      <publishTime>05/18/2021 18:47:26</publishTime>
     </File>
     <File Include="WMServer.dll">
-      <publishTime>05/03/2021 21:05:27</publishTime>
+      <publishTime>05/18/2021 18:47:26</publishTime>
     </File>
     <File Include="WMServer.exe">
-      <publishTime>05/03/2021 21:05:27</publishTime>
+      <publishTime>05/18/2021 18:47:26</publishTime>
     </File>
     <File Include="WMServer.pdb">
-      <publishTime>05/03/2021 21:05:27</publishTime>
+      <publishTime>05/18/2021 18:47:26</publishTime>
     </File>
     <File Include="WMServer.runtimeconfig.json">
-      <publishTime>05/03/2021 20:49:32</publishTime>
+      <publishTime>05/17/2021 18:04:56</publishTime>
     </File>
   </ItemGroup>
 </Project>

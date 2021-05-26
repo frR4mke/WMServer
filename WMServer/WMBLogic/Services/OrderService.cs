@@ -16,9 +16,10 @@ namespace WMBLogic.Services
 {
     public class OrderService
     {
-        private readonly MailHandler mailHandler;
-        private readonly IDataBase database;
+        readonly MailHandler mailHandler;
+        readonly IDataBase database;
         readonly IDbConnection dbConnection;
+
         public OrderService(IDataBase database, MailHandler mailHandler, IDbConnection dbConnection)
         {
             this.database = database;
@@ -26,6 +27,21 @@ namespace WMBLogic.Services
             this.dbConnection = dbConnection;
         }
 
+        public void UpdateOrder(Orders order)
+        {
+            database.Repository<Orders>().EditEntity(order);
+        }
+        public Orders GetOrder(int order_id)
+        {
+            var result = database.Repository<Orders>().FindEntity(order_id);
+
+            return result;
+        }
+        /// <summary>
+        /// Оформление заказа
+        /// </summary>
+        /// <param name="formOrder"></param>
+        /// <returns></returns>
         public int SaveOrder(DTOFormOrder formOrder)
         {
             var repOrders = database.Repository<Orders>();
@@ -47,23 +63,28 @@ namespace WMBLogic.Services
             return order.order_id;
         }
 
-        public CustomerForm GetCustomerForm()
+        /// <summary>
+        /// Для формы с оформлением заказа
+        /// </summary>
+        /// <returns></returns>
+        public SelectLists GetSelectLists()
         {
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOCustomerForm);
-            
+
             SqlMapper.GridReader result = dbConnection.QueryMultiple(sql);
 
-            var test = new  CustomerForm
+            return new SelectLists
             {
                 paymentMethods = result.Read<PaymentMethods>().ToArray(),
                 deliveryMethods = result.Read<DeliveryMethods>().ToArray(),
                 citiesServed = result.Read<CitiesServed>().ToArray(),
-                
             };
-
-            return test;
         }
 
+        /// <summary>
+        /// Для страницы с заказми
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<DTOOrder> GetDTOOrder()
         {
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderList);
@@ -72,6 +93,7 @@ namespace WMBLogic.Services
 
             return orders;
         }
+
         private void SendEmailToAdmin(int order_id)
         {
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderByID);
@@ -90,7 +112,9 @@ namespace WMBLogic.Services
                                  Environment.NewLine +
                                  $"Номер телефона: {order.phoneNumber}" +
                                  Environment.NewLine +
-                                 $"Сумма: {order.sum_price}";
+                                 $"Сумма: {order.sum_price}" +
+                                 Environment.NewLine +
+                                 "Редактирование заказа http://localhost:4200/#/Orders/Edit/2";
 
             string messageSubject = $"Создан заказ. №: {order_id}.";
 

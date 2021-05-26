@@ -6,3 +6,4 @@ D:\Projects\WM2\WMServer\ConnectionManager\obj\Release\netcoreapp3.1\ConnectionM
 D:\Projects\WM2\WMServer\ConnectionManager\obj\Release\netcoreapp3.1\ConnectionManager.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\ConnectionManager\obj\Release\netcoreapp3.1\ConnectionManager.dll
 D:\Projects\WM2\WMServer\ConnectionManager\obj\Release\netcoreapp3.1\ConnectionManager.pdb
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Release\netcoreapp3.1\ConnectionManager.csprojAssemblyReference.cache

@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using NDapper.Interfaces;
 using System.Data;
 using System.Data.SqlClient;
+using WMBLogic.Models.INTERFACES;
 using WMBLogic.Services;
 
 
@@ -14,17 +15,17 @@ namespace WMServer.Configure
     {
         public static void RegisterComponents(this IServiceCollection services, IConfiguration configuration)
         {
-            //ErrorLog
-            services.AddScoped<ErrorLogger.ErrorLogger, ErrorLogger.ErrorLogger>();
+            services.AddScoped<ProductsService, ProductsService>();
+			//ErrorLog
+			services.AddScoped<ErrorLogger.ErrorLogger, ErrorLogger.ErrorLogger>();
             //ConnectionManager
             services.AddScoped<ConnectionManager.ConnectionManager, ConnectionManager.ConnectionManager>();
             //Dapper
             services.AddScoped<IDataBase, NDapper.Dapper>();
-            //Services
-            services.AddScoped<ProductsService, ProductsService>();
+            //Services          
             services.AddScoped<FilterService, FilterService>();
-            services.AddScoped<HeatingFloorService, HeatingFloorService>();
             services.AddScoped<OrderService, OrderService>();
+            services.AddScoped<IUserService, UserService>();
             //Mail
             services.Configure<MailCredentials>(setup =>
             {
@@ -40,12 +41,17 @@ namespace WMServer.Configure
             });
 
             //DbConnection
-            services.AddScoped<IDbConnection>(x =>
+            services.AddTransient<IDbConnection>(x =>
             {
-                var conn = new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
-                conn.Open();
-                return conn;
+                return new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
+                //conn.Open();
+                //return conn;
             });
-        }
+
+			
+
+		}
     }
+
+    
 }

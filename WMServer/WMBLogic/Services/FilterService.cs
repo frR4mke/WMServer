@@ -16,8 +16,8 @@ namespace WMBLogic.Services
 {
     public class FilterService
     {
-        readonly IDataBase database;
-        readonly IDbConnection dbConnection;
+		public readonly IDataBase database;
+        public readonly IDbConnection dbConnection;
 
         public FilterService(IDataBase database, IDbConnection dbConnection)
         {

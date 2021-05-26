@@ -2,7 +2,7 @@
 
 namespace WMBLogic.Models.DTO
 {
-    public class CustomerForm
+    public class SelectLists
     {
         public PaymentMethods[] paymentMethods { get; set; }
 
