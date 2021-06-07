@@ -7,6 +7,8 @@ using WMBLogic.Models.DTO;
 using WMBLogic.Models.FILTRES;
 using WMBLogic.Services;
 using System.Web;
+using WMBLogic.Models.DB;
+
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace WMServer.Controllers
@@ -63,6 +65,27 @@ namespace WMServer.Controllers
         public IEnumerable<DTOProducts> GetProductForCatalog([FromBody] Filter filter, int productType_id)
         {
             return productsService.GetProductForCatalog(productType_id, filter);
+        }
+
+        [HttpGet]
+        [Route("GetProductSelectList")]
+        public IEnumerable<ProductSelectList> GetProductSelectList()
+        {
+            return productsService.GetProductSelectList();
+        }
+
+        [HttpGet]
+        [Route("GetProductOptionsSelectListById/{product_id}")]
+        public IEnumerable<ProductOptionsSelectList> GetProductOptionsSelectListById(int product_id)
+        {
+            return productsService.GetProductOptionsSelectListById(product_id);
+        }
+
+        [HttpPost]
+        [Route("GetProductOptionsSelectListByIds")]
+        public IEnumerable<ProductOptionsSelectList> GetProductOptionsSelectListByIds([FromBody] int[] product_ids)
+        {
+            return productsService.GetProductOptionsSelectListByIds(product_ids);
         }
     }
 }

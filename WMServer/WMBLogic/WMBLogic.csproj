@@ -23,8 +23,7 @@
 		<None Remove="Embedded\DTO\DTOOrderByID.sql" />
 		<None Remove="Embedded\DTO\DTOCustomerForm.sql" />
 		<None Remove="Embedded\DTO\DTOOrderList.sql" />
-
-		
+		<None Remove="Embedded\DTO\DROOrderEdit.sql" />		
 	</ItemGroup>
 	<ItemGroup>
 		<EmbeddedResource Include="Embedded\DTO\Filter.sql" />
@@ -35,6 +34,7 @@
 		<EmbeddedResource Include="Embedded\DTO\DTOOrderByID.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOOrder.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOOrderList.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DROOrderEdit.sql" />	
 
 	</ItemGroup>
 	<ItemGroup>

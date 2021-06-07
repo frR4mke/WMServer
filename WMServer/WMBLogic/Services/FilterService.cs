@@ -16,7 +16,7 @@ namespace WMBLogic.Services
 {
     public class FilterService
     {
-		public readonly IDataBase database;
+        public readonly IDataBase database;
         public readonly IDbConnection dbConnection;
 
         public FilterService(IDataBase database, IDbConnection dbConnection)
@@ -24,6 +24,7 @@ namespace WMBLogic.Services
             this.dbConnection = dbConnection;
             this.database = database;
         }
+
         public Filter GetFilter(int productType_id)
         {
             _Filter _filter = _GetFilter(productType_id);
@@ -86,8 +87,7 @@ namespace WMBLogic.Services
 
             List<Manufacturers> manufacturersList = new List<Manufacturers>();
 
-            manufacturers.ForEach(x =>
-            {
+            manufacturers.ForEach(x => {
                 manufacturersList.Add(new Manufacturers
                 {
                     manufacturer_id = x.man_id,

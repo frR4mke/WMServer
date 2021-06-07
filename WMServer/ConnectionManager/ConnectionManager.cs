@@ -2,18 +2,17 @@
 
 namespace ConnectionManager
 {
-	public class ConnectionManager
-	{
-		private const string defaultConnection = "DefaultConnection";
+    public class ConnectionManager
+    {
+        private const string defaultConnection = "DefaultConnection";
 
-		private readonly IConfiguration Configuration;
+        private readonly IConfiguration Configuration;
 
-		public ConnectionManager(IConfiguration configuration)
-		{
-			this.Configuration = configuration;
-		}
+        public ConnectionManager(IConfiguration configuration)
+        {
+            this.Configuration = configuration;
+        }
 
-		public string GetConnectionString() => Configuration.GetConnectionString(defaultConnection);
-
-	}
+        public string GetConnectionString() => Configuration.GetConnectionString(defaultConnection);
+    }
 }

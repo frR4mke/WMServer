@@ -8,14 +8,20 @@ namespace WMBLogic.Models.DB
         [Key]
         [Column]
         public int orderDetails_id { get; set; }
+
         [Column]
         public int order_id { get; set; }
+
         [Column]
         public int product_id { get; set; }
+
+        [Column]
+        public int productOptions_id { get; set; }
+
         [Column]
         public int quantity { get; set; }
+
         [Column]
         public decimal price { get; set; }
-
     }
 }

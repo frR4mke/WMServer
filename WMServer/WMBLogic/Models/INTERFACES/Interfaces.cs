@@ -10,6 +10,5 @@ namespace WMBLogic.Models.INTERFACES
         User Login(User oUser);
 
         string GenerateToken(User oUser);
-
     }
 }

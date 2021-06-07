@@ -34,9 +34,12 @@ namespace WMBLogic.Models.DTO
 
         public int subProductType_id { get; set; }
 
-        public string short_description
-        {
-            get => description.IsEmpty() ? string.Empty : description.Length > 100 ? description.Substring(0, 100).ToString() : description;
-        }
+        public string short_description { get => description.IsEmpty() ? string.Empty : description.Length > 100 ? description.Substring(0, 100).ToString() : description; }
+    }
+
+    public class ProductSelectList
+    {
+        public int product_id { get; set; }
+        public string product_title { get; set; }
     }
 }

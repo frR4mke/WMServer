@@ -9,33 +9,34 @@ using WMBLogic.Models.INTERFACES;
 
 namespace WMServer.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class UsersController : ControllerBase
-	{
-		private readonly IUserService _userService;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class UsersController : ControllerBase
+    {
+        private readonly IUserService _userService;
 
-		public UsersController(IUserService userService)
-		{
-			_userService = userService;
-		}
-		
-		[HttpPost]
-		[Route("Login")]
-		public IActionResult Login([FromBody]User user)
-		{
-			var _user = _userService.Login(user);
+        public UsersController(IUserService userService)
+        {
+            _userService = userService;
+        }
 
-			if (_user is not null)
-			{
-				var token = _userService.GenerateToken(_user);
-				
-				return Ok(new {
-					acces_token = token
-				});
-			}
-			
-			return Unauthorized();
-		}
-	}
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login([FromBody] User user)
+        {
+            var _user = _userService.Login(user);
+
+            if (_user is not null)
+            {
+                var token = _userService.GenerateToken(_user);
+
+                return Ok(new
+                {
+                    acces_token = token
+                });
+            }
+
+            return Unauthorized();
+        }
+    }
 }

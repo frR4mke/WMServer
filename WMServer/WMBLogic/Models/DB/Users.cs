@@ -10,21 +10,24 @@ namespace WMBLogic.Models.DB
         public string username { get; set; }
         public string password { get; set; }
     }
+
     public class AuthOption
     {
         [Column]
         public string issuer { get; set; }
+
         [Column]
         public string audience { get; set; }
+
         [Column]
         public string secret { get; set; }
+
         [Column]
         public int tokenLifetime { get; set; }
-        
+
         public SymmetricSecurityKey GetSymmetricSecurityKey()
         {
             return new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secret));
         }
-
     }
 }

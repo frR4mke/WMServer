@@ -11,14 +11,17 @@ namespace WMBLogic.Models.DB
         [Key]
         [Column]
         public int productAttributes_id { get; set; }
+
         [Column]
         public int product_id { get; set; }
+
         [Column]
         public string attribute_group { get; set; }
+
         [Column]
         public string attribute { get; set; }
+
         [Column]
         public string text { get; set; }
-
     }
 }

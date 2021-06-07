@@ -35,7 +35,7 @@ namespace WMBLogic.Services
             var securityKey = authOpt.GetSymmetricSecurityKey();
 
             var cre = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-          
+
             var claims = new List<Claim>()
             {
                 new Claim(JwtRegisteredClaimNames.Name, oUser.username),

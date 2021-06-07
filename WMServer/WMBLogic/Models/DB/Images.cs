@@ -13,6 +13,5 @@ namespace WMBLogic.Models.DB
         public string image_title { get; set; }
 
         public int sort { get; set; }
-
     }
 }

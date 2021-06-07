@@ -16,8 +16,8 @@ namespace WMServer.Configure
         public static void RegisterComponents(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped<ProductsService, ProductsService>();
-			//ErrorLog
-			services.AddScoped<ErrorLogger.ErrorLogger, ErrorLogger.ErrorLogger>();
+            //ErrorLog
+            services.AddScoped<ErrorLogger.ErrorLogger, ErrorLogger.ErrorLogger>();
             //ConnectionManager
             services.AddScoped<ConnectionManager.ConnectionManager, ConnectionManager.ConnectionManager>();
             //Dapper
@@ -27,13 +27,11 @@ namespace WMServer.Configure
             services.AddScoped<OrderService, OrderService>();
             services.AddScoped<IUserService, UserService>();
             //Mail
-            services.Configure<MailCredentials>(setup =>
-            {
+            services.Configure<MailCredentials>(setup => {
                 setup.Address = configuration["MailCredentials:Address"];
                 setup.Password = configuration["MailCredentials:Password"];
             });
-            services.AddScoped<MailHandler, MailHandler>(x =>
-            {
+            services.AddScoped<MailHandler, MailHandler>(x => {
                 var mc = x.GetService<IOptions<MailCredentials>>();
                 var error = x.GetService<ErrorLogger.ErrorLogger>();
 
@@ -41,17 +39,11 @@ namespace WMServer.Configure
             });
 
             //DbConnection
-            services.AddTransient<IDbConnection>(x =>
-            {
+            services.AddTransient<IDbConnection>(x => {
                 return new SqlConnection(configuration.GetConnectionString("DefaultConnection"));
                 //conn.Open();
                 //return conn;
             });
-
-			
-
-		}
+        }
     }
-
-    
 }

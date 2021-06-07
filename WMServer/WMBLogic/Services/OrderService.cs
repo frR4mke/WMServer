@@ -27,40 +27,80 @@ namespace WMBLogic.Services
             this.dbConnection = dbConnection;
         }
 
-        public void UpdateOrder(Orders order)
-        {
-            database.Repository<Orders>().EditEntity(order);
-        }
-        public Orders GetOrder(int order_id)
-        {
-            var result = database.Repository<Orders>().FindEntity(order_id);
+        // public void UpdateOrder(Orders order)
+        // {
+        //     database.Repository<Orders>().EditEntity(order);
+        // }
 
-            return result;
+        public void UpdateOrder(DTOOrderEdit formOrder)
+        {
+            database.Repository<Orders>().EditEntity(formOrder.order);
+
+            string sql = @"select * from OrdersDetails where order_id = @order_id";
+
+            IEnumerable<OrdersDetails> currentDetails = database.ExucuteQuery<OrdersDetails>(sql, new {@order_id = formOrder.order.order_id});
+
+            IEnumerable<OrdersDetails> detailsTodelete = currentDetails.Where(x => !formOrder.ordersDetails.Where(x => x.orderDetails_id != 0).Select(x => x.orderDetails_id).Contains(x.orderDetails_id));
+
+            IEnumerable<OrdersDetails> detailsToCrete = formOrder.ordersDetails.Where(x => x.orderDetails_id == 0);
+
+
+            foreach (var ordersDetail in detailsTodelete)
+            {
+                database.Repository<OrdersDetails>().DeleteEntity(ordersDetail.orderDetails_id);
+            }
+            
+            foreach (OrdersDetails ordersDetail in detailsToCrete)
+            {
+                database.Repository<OrdersDetails>().CreateEntity(ordersDetail);
+            }
+
+            foreach (OrdersDetails ordersDetail in formOrder.ordersDetails)
+            {
+                if (detailsTodelete.Contains(ordersDetail) || detailsToCrete.Contains(ordersDetail))
+                    continue;
+                
+                database.Repository<OrdersDetails>().EditEntity(ordersDetail);
+            }
         }
+
+        public DTOOrderEdit GetOrder(int order_id)
+        {
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderEdit);
+
+            SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new {@order_id = order_id});
+
+            DTOOrderEdit fullOrder = new DTOOrderEdit
+            {
+                order = result.Read<Orders>().FirstOrDefault(),
+                ordersDetails = result.Read<OrdersDetails>().ToArray()
+            };
+
+            return fullOrder;
+        }
+
+
         /// <summary>
         /// Оформление заказа
         /// </summary>
         /// <param name="formOrder"></param>
         /// <returns></returns>
-        public int SaveOrder(DTOFormOrder formOrder)
+        public int SaveOrder(DTOOrderEdit formOrder, string url)
         {
             var repOrders = database.Repository<Orders>();
             var repOrdersDetails = database.Repository<OrdersDetails>();
 
-            Orders order = CreateOrder(formOrder);
+            repOrders.CreateEntity(formOrder.order);
 
-            repOrders.CreateEntity(order);
-
-            OrdersDetails[] ordersDetails = GetOrdersDetails(formOrder, order.order_id);
-
-            for (int i = 0; i < ordersDetails.Length; i++)
+            foreach (var item in formOrder.ordersDetails)
             {
-                repOrdersDetails.CreateEntity(ordersDetails[i]);
+                item.order_id = formOrder.order.order_id;
+                repOrdersDetails.CreateEntity(item);
             }
 
-            SendEmailToAdmin(order.order_id);
+            SendEmailToAdmin(formOrder.order.order_id, url);
 
-            return order.order_id;
+            return formOrder.order.order_id;
         }
 
         /// <summary>
@@ -94,7 +134,7 @@ namespace WMBLogic.Services
             return orders;
         }
 
-        private void SendEmailToAdmin(int order_id)
+        private void SendEmailToAdmin(int order_id, string url)
         {
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderByID);
 
@@ -114,7 +154,7 @@ namespace WMBLogic.Services
                                  Environment.NewLine +
                                  $"Сумма: {order.sum_price}" +
                                  Environment.NewLine +
-                                 "Редактирование заказа http://localhost:4200/#/Orders/Edit/2";
+                                 $"Редактирование заказа {url}#/Orders/Edit/{order_id}";
 
             string messageSubject = $"Создан заказ. №: {order_id}.";
 

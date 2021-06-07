@@ -5,32 +5,29 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace WMServer.Configure
 {
-	public static class AuthenticationConfig
-	{
-		public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration Configuration)
-		{
-			var authOptionsConfig = Configuration.GetSection("Auth").Get<AuthOptions>();
+    public static class AuthenticationConfig
+    {
+        public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration Configuration)
+        {
+            var authOptionsConfig = Configuration.GetSection("Auth").Get<AuthOptions>();
 
-			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-				.AddJwtBearer(options => {
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = authOptionsConfig.Issuer,
 
-					options.RequireHttpsMetadata = false;
-					options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters {
+                        ValidateAudience = true,
+                        ValidAudience = authOptionsConfig.Audience,
 
-						ValidateIssuer = true,
-						ValidIssuer = authOptionsConfig.Issuer,
+                        ValidateLifetime = true,
 
-						ValidateAudience = true,
-						ValidAudience = authOptionsConfig.Audience,
-
-						ValidateLifetime = true,
-
-						IssuerSigningKey = authOptionsConfig.GetSymmetricSecurityKey(),
-						ValidateIssuerSigningKey = true,
-
-					};
-
-				});
-		}
-	}
+                        IssuerSigningKey = authOptionsConfig.GetSymmetricSecurityKey(),
+                        ValidateIssuerSigningKey = true,
+                    };
+                });
+        }
+    }
 }

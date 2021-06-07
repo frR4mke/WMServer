@@ -9,6 +9,5 @@ namespace WMBLogic.Models.DB
         public int manufacturer_id { get; set; }
 
         public string manufacturer_title { get; set; }
-
     }
 }

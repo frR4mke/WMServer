@@ -10,25 +10,26 @@ using WMBLogic.Services;
 
 namespace WMServer.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class WeatherForecastController : ControllerBase
-	{
-		private static readonly string[] Summaries = new[]
-		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-		};
-		readonly ProductsService test;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class WeatherForecastController : ControllerBase
+    {
+        private static readonly string[] Summaries = new[]
+        {
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
 
-		public WeatherForecastController(ProductsService test)
-		{
-			this.test = test;
-		}
+        readonly ProductsService test;
 
-		[HttpGet]
-		public IEnumerable<DTOProducts> Get()
-		{
-			return test.GetDTOProducts();
-		}
-	}
+        public WeatherForecastController(ProductsService test)
+        {
+            this.test = test;
+        }
+
+        [HttpGet]
+        public IEnumerable<DTOProducts> Get()
+        {
+            return test.GetDTOProducts();
+        }
+    }
 }

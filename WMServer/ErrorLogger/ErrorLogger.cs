@@ -17,17 +17,20 @@ namespace ErrorLogger
         {
             ErrorLog error = new ErrorLog
             {
-                eventdatetime = DateTime.Now, 
-                stacktrace = exception.StackTrace, 
-                message = exception.Message, 
-                errordescription = errorDescription, 
+                eventdatetime = DateTime.Now,
+                stacktrace = exception.StackTrace,
+                message = exception.Message,
+                errordescription = errorDescription,
                 source = exception.Source
             };
 
             string sql = @"insert into ErrorLog values(@eventdatetime,@stacktrace,@message,@errordescription,@source) SELECT CAST(SCOPE_IDENTITY() as int)";
 
             int insertedId = dbConnection.QuerySingle<int>(sql,
-                new {eventdatetime = error.eventdatetime, stacktrace = error.stacktrace, message = error.message, errordescription = error.errordescription, source = error.source});
+                new
+                {
+                    eventdatetime = error.eventdatetime, stacktrace = error.stacktrace, message = error.message, errordescription = error.errordescription, source = error.source
+                });
 
             error.error_id = insertedId;
 
@@ -48,6 +51,5 @@ namespace ErrorLogger
         public string source { get; set; }
 
         public string errordescription { get; set; }
-
     }
 }

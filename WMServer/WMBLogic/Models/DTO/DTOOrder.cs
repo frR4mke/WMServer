@@ -9,7 +9,7 @@ namespace WMBLogic.Models.DTO
     public class DTOOrder
     {
         public int order_id { get; set; }
-        
+
         public string fio { get; set; }
 
         public string phoneNumber { get; set; }
@@ -17,17 +17,17 @@ namespace WMBLogic.Models.DTO
         public string payment_title { get; set; }
 
         public string city_title { get; set; }
-        
+
         public string delivery_title { get; set; }
 
         public string deliveryAddress { get; set; }
-        
+
         public DateTime orderdatetime { get; set; }
-        
+
         public OrderState orderstate { get; set; }
 
         public string orderstate_title => Enumerations.GetEnumDescription(this.orderstate);
-        
+
         public decimal sum_price { get; set; }
     }
 

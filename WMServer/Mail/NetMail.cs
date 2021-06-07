@@ -19,9 +19,9 @@ namespace Mail
                 Subject = subject,
                 Body = text
             };
-            
+
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
-            
+
             smtp.Credentials = new NetworkCredential(fromAdress, credentials);
             smtp.EnableSsl = true;
             smtp.Send(m);

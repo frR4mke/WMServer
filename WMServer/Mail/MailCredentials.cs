@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Mail
 {
-	public class MailCredentials
-	{
-		public string Address { get; set; }
-		public string Password { get; set; }
-	}
+    public class MailCredentials
+    {
+        public string Address { get; set; }
+        public string Password { get; set; }
+    }
 }

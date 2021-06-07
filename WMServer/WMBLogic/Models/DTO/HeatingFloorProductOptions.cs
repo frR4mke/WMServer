@@ -6,7 +6,7 @@ using WMBLogic.Models.INTERFACES;
 
 namespace WMBLogic.Models.DTO
 {
-	// public class HeatingFloorProductOptions : DTOProductOptions, IHeatingFloorProduct
-	// {
-	// }
+    // public class HeatingFloorProductOptions : DTOProductOptions, IHeatingFloorProduct
+    // {
+    // }
 }

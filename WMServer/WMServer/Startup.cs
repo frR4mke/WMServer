@@ -15,54 +15,52 @@ using WMServer.Configure;
 
 namespace WMServer
 {
-	public class Startup
-	{
-		private const string AllCors = "AllowAll";
-		public Startup(IConfiguration configuration)
-		{
-			Configuration = configuration;
-		}
+    public class Startup
+    {
+        private const string AllCors = "AllowAll";
 
-		public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
 
-		// This method gets called by the runtime. Use this method to add services to the container.
-		public void ConfigureServices(IServiceCollection services)
-		{
+        public IConfiguration Configuration { get; }
 
-			var authOptionsConfig = Configuration.GetSection("Auth");
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            var authOptionsConfig = Configuration.GetSection("Auth");
 
-			services.Configure<AuthOptions>(authOptionsConfig);
+            services.Configure<AuthOptions>(authOptionsConfig);
 
-			services.ConfigureAuthentication(Configuration);
+            services.ConfigureAuthentication(Configuration);
 
-			services.AddControllers();
+            services.AddControllers();
 
-			services.RegisterComponents(Configuration);			
+            services.RegisterComponents(Configuration);
 
-			services.AddCors(options => options.AddPolicy(AllCors, p => p.AllowAnyOrigin()
-																			.AllowAnyMethod()
-																			.AllowAnyHeader()));
-		}
+            services.AddCors(options => options.AddPolicy(AllCors, p => p.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()));
+        }
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-		{
-			if (env.IsDevelopment())
-			{
-				app.UseDeveloperExceptionPage();
-			}
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
 
-			//app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
-			app.UseRouting();
+            app.UseRouting();
 
-			app.UseCors(AllCors);
+            app.UseCors(AllCors);
 
-			app.UseAuthorization();
+            app.UseAuthorization();
 
-			app.UseEndpoints(endpoints => {
-				endpoints.MapControllers();
-			});
-		}
-	}
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+        }
+    }
 }

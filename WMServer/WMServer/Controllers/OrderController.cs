@@ -13,50 +13,48 @@ using WMBLogic.Services;
 
 namespace WMServer.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class OrdersController : ControllerBase
-	{
-		
-		readonly OrderService orderService;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
+    {
+        readonly OrderService orderService;
 
-		public OrdersController(OrderService orderService)
-		{
-			this.orderService = orderService;
-		}
+        public OrdersController(OrderService orderService)
+        {
+            this.orderService = orderService;
+        }
 
-		
-		// POST api/<OrderController>
-		[HttpPost]
-		public int Post([FromBody] DTOFormOrder formOrder)
-		{
-			var test = $"{this.Request.Scheme}://{this.Request.Host}{this.Request.PathBase}";
-			
-			return orderService.SaveOrder(formOrder);
-		}
 
-		[Route("GetSelectLists")]
-		public SelectLists GetSelectLists()
-		{
-			return orderService.GetSelectLists();
-		}
-		[Route("GetDTOOrder")]
-		public IEnumerable<DTOOrder> GetDTOOrder()
-		{
-			return orderService.GetDTOOrder();
-		}
-		[Route("GetOrder/{order_id}")]
-		public Orders GetOrder(int order_id)
-		{
-			return orderService.GetOrder(order_id);
-		}
-		[HttpPost]
-		[Route("UpdateOrder")]
-		public void UpdateOrder([FromBody] Orders order)
-		{
-			orderService.UpdateOrder(order);
-		}
-		
-		
-	}
+        // POST api/<OrderController>
+        [HttpPost]
+        public int Post([FromBody] DTOOrderEdit formOrder)
+        {
+            return orderService.SaveOrder(formOrder, Request.Headers["Referer"].ToString());
+        }
+
+        [Route("GetSelectLists")]
+        public SelectLists GetSelectLists()
+        {
+            return orderService.GetSelectLists();
+        }
+
+        [Route("GetDTOOrder")]
+        public IEnumerable<DTOOrder> GetDTOOrder()
+        {
+            return orderService.GetDTOOrder();
+        }
+
+        [Route("GetOrder/{order_id}")]
+        public DTOOrderEdit GetOrder(int order_id)
+        {
+            return orderService.GetOrder(order_id);
+        }
+
+        [HttpPost]
+        [Route("UpdateOrder")]
+        public void UpdateOrder([FromBody] DTOOrderEdit order)
+        {
+            orderService.UpdateOrder(order);
+        }
+    }
 }
