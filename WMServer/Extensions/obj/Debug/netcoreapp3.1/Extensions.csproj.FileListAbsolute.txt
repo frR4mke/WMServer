@@ -15,4 +15,5 @@ D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.AssemblyI
 D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.dll
 D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.pdb
-D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csprojAssemblyReference.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\netcoreapp3.1\Extensions.GeneratedMSBuildEditorConfig.editorconfig

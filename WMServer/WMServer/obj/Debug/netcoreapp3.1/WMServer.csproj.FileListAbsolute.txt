@@ -128,6 +128,5 @@ D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\osx-x64\nativ
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SQLite.Interop.dll
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SQLite.Interop.dll
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\WMServer.StaticWebAssets.xml
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csproj.AssemblyReference.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.GeneratedMSBuildEditorConfig.editorconfig

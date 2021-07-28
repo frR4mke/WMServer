@@ -1,9 +1,10 @@
 D:\Projects\WM2\WMServer\AuthLibrary\bin\Debug\netcoreapp3.1\AuthLibrary.deps.json
 D:\Projects\WM2\WMServer\AuthLibrary\bin\Debug\netcoreapp3.1\AuthLibrary.dll
 D:\Projects\WM2\WMServer\AuthLibrary\bin\Debug\netcoreapp3.1\AuthLibrary.pdb
-D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.csprojAssemblyReference.cache
 D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.AssemblyInfoInputs.cache
 D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.AssemblyInfo.cs
 D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.dll
 D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.pdb
+D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\AuthLibrary\obj\Debug\netcoreapp3.1\AuthLibrary.GeneratedMSBuildEditorConfig.editorconfig
