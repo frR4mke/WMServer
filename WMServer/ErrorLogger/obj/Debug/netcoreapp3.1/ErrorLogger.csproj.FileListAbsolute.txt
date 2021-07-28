@@ -1,9 +1,13 @@
 D:\Projects\WM2\WMServer\ErrorLogger\bin\Debug\netcoreapp3.1\ErrorLogger.deps.json
 D:\Projects\WM2\WMServer\ErrorLogger\bin\Debug\netcoreapp3.1\ErrorLogger.dll
 D:\Projects\WM2\WMServer\ErrorLogger\bin\Debug\netcoreapp3.1\ErrorLogger.pdb
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.csprojAssemblyReference.cache
 D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.AssemblyInfoInputs.cache
 D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.AssemblyInfo.cs
 D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.dll
 D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.pdb
+D:\Projects\WM2\WMServer\ErrorLogger\bin\Debug\netcoreapp3.1\ErrorLogger.runtimeconfig.json
+D:\Projects\WM2\WMServer\ErrorLogger\bin\Debug\netcoreapp3.1\ErrorLogger.runtimeconfig.dev.json
+D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\ErrorLogger\obj\Debug\netcoreapp3.1\ErrorLogger.genruntimeconfig.cache

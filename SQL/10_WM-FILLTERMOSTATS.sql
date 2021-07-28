@@ -20,7 +20,8 @@ insert into ProductOptions(product_id,power,layingArea,wireLength,price) values
 (26,null,null,null,1830),
 (27,null,null,null,3784),
 (28,null,null,null,2253),
-(29,null,null,null,3718)
+(29,null,null,null,3718),
+(25,null,null,null,625)
 --IN-THERM RTC 70
 insert into ProductAttributes values(25,N'Технические характеристики',N'Тип',N'аналоговый'),
 (25,N'Технические характеристики',N'Адаптивная функция',N'нет'),

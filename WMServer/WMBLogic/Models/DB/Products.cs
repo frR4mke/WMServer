@@ -36,5 +36,8 @@ namespace WMBLogic.Models.DB
 
         [Column]
         public int subProductType_id { get; set; }
+        
+        [Column]
+        public decimal? product_price { get; set; }
     }
 }

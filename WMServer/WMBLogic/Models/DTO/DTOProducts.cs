@@ -17,7 +17,6 @@ namespace WMBLogic.Models.DTO
         public int quantity { get; set; }
 
         public int manufacturer_id { get; set; }
-
         public string description { get; set; }
 
         public string full_product_title { get; set; }
@@ -33,7 +32,12 @@ namespace WMBLogic.Models.DTO
         public string country { get; set; }
 
         public int subProductType_id { get; set; }
-
+        
+        public int percentage { get; set; }
+        
+        public string gift_title { get; set; }
+        
+        public decimal? product_price { get; set; }
         public string short_description { get => description.IsEmpty() ? string.Empty : description.Length > 100 ? description.Substring(0, 100).ToString() : description; }
     }
 

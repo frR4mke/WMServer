@@ -26,7 +26,11 @@ namespace WMBLogic.Models.DTO
         public decimal? matLength { get; set; }
 
         public decimal price { get; set; }
+        
+        public decimal? discountprice { get; set; }
 
         public int productType_id { get; set; }
+        
+        public string size { get; set; }
     }
 }

@@ -1,10 +1,10 @@
-﻿using Mail;
+﻿using System.Data;
+using System.Data.SqlClient;
+using Mail;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using NDapper.Interfaces;
-using System.Data;
-using System.Data.SqlClient;
 using WMBLogic.Models.INTERFACES;
 using WMBLogic.Services;
 
@@ -26,6 +26,8 @@ namespace WMServer.Configure
             services.AddScoped<FilterService, FilterService>();
             services.AddScoped<OrderService, OrderService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<PromotionsService, PromotionsService>();
+            services.AddScoped<RepositoryService, RepositoryService>();
             //Mail
             services.Configure<MailCredentials>(setup => {
                 setup.Address = configuration["MailCredentials:Address"];
@@ -44,6 +46,7 @@ namespace WMServer.Configure
                 //conn.Open();
                 //return conn;
             });
+
         }
     }
 }

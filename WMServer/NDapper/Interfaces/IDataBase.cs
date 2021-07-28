@@ -8,9 +8,6 @@ namespace NDapper.Interfaces
 {
     public interface IDataBase
     {
-        IEnumerable<T> ExucuteQueryWithFilеterRange<T>(FormattableString selectClause, List<FilterRange> filterRanges);
-        IEnumerable<T> ExucuteQuery<T>(string query, object param = null);
-
         IDapperRepository<T> Repository<T>();
     }
 

@@ -27,10 +27,14 @@ D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Extensions.pdb
 D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\Mail.pdb
 D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\NDapper.pdb
 D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\ErrorLogger.pdb
-D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csprojAssemblyReference.cache
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.AssemblyInfoInputs.cache
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.AssemblyInfo.cs
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.CopyComplete
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.dll
 D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.pdb
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\WMBLogic.runtimeconfig.json
+D:\Projects\WM2\WMServer\WMBLogic\bin\Debug\netcoreapp3.1\WMBLogic.runtimeconfig.dev.json
+D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\WMBLogic\obj\Debug\netcoreapp3.1\WMBLogic.genruntimeconfig.cache

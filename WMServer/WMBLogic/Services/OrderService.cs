@@ -27,18 +27,13 @@ namespace WMBLogic.Services
             this.dbConnection = dbConnection;
         }
 
-        // public void UpdateOrder(Orders order)
-        // {
-        //     database.Repository<Orders>().EditEntity(order);
-        // }
-
         public void UpdateOrder(DTOOrderEdit formOrder)
         {
             database.Repository<Orders>().EditEntity(formOrder.order);
 
             string sql = @"select * from OrdersDetails where order_id = @order_id";
 
-            IEnumerable<OrdersDetails> currentDetails = database.ExucuteQuery<OrdersDetails>(sql, new {@order_id = formOrder.order.order_id});
+            IEnumerable<OrdersDetails> currentDetails = dbConnection.Query<OrdersDetails>(sql, new {@order_id = formOrder.order.order_id});
 
             IEnumerable<OrdersDetails> detailsTodelete = currentDetails.Where(x => !formOrder.ordersDetails.Where(x => x.orderDetails_id != 0).Select(x => x.orderDetails_id).Contains(x.orderDetails_id));
 
@@ -112,12 +107,14 @@ namespace WMBLogic.Services
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOCustomerForm);
 
             SqlMapper.GridReader result = dbConnection.QueryMultiple(sql);
-
+    
             return new SelectLists
             {
                 paymentMethods = result.Read<PaymentMethods>().ToArray(),
                 deliveryMethods = result.Read<DeliveryMethods>().ToArray(),
                 citiesServed = result.Read<CitiesServed>().ToArray(),
+                orderStates = result.Read<OrderStates>().ToArray(),
+                paymentType = result.Read<PaymentType>().ToArray()  
             };
         }
 
@@ -129,71 +126,47 @@ namespace WMBLogic.Services
         {
             string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderList);
 
-            var orders = database.ExucuteQuery<DTOOrder>(sql);
+            var orders = dbConnection.Query<DTOOrder>(sql);
 
             return orders;
         }
 
         private void SendEmailToAdmin(int order_id, string url)
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOOrderByID);
+            string sql = EmbeddedResourceManager.GetString(typeof(OrderService), SQLPath.DTOMAIL);
 
-            DTOOrder order = database.ExucuteQuery<DTOOrder>(sql, new {@order_id = order_id}).FirstOrDefault();
+            SqlMapper.GridReader result = dbConnection.QueryMultiple(sql, new {@order_id = order_id});
 
-            string messageBody = $"Статус заказа {order.orderstate_title}." +
-                                 Environment.NewLine +
-                                 $"Способ оплаты: {order.payment_title}" +
-                                 Environment.NewLine +
-                                 $"Способ доставки: {order.delivery_title}" +
-                                 Environment.NewLine +
-                                 $"Адресс доставки: {order.deliveryAddress}" +
-                                 Environment.NewLine +
-                                 $"Город: {order.city_title}" +
-                                 Environment.NewLine +
-                                 $"Номер телефона: {order.phoneNumber}" +
-                                 Environment.NewLine +
-                                 $"Сумма: {order.sum_price}" +
-                                 Environment.NewLine +
-                                 $"Редактирование заказа {url}#/Orders/Edit/{order_id}";
+            DTOOrder order = result.Read<DTOOrder>().FirstOrDefault();
+
+            DTOOrderDetails[] orderDetails = result.Read<DTOOrderDetails>().ToArray();
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Статус заказа {order.orderstate_title}. ");
+            sb.AppendLine($"Способ оплаты: {order.payment_title}. ");
+            sb.AppendLine($"Способ доставки: {order.delivery_title}. ");
+            sb.AppendLine($"Адресс доставки: {order.deliveryAddress}. ");
+            sb.AppendLine($"Город: {order.city_title}. ");
+            sb.AppendLine($"Номер телефона: {order.phoneNumber}. ");
+            sb.AppendLine($"Имя: {order.fio}. ");
+            sb.AppendLine($"Сумма: {order.sum_price}.");
+            sb.AppendLine($"Редактирование заказа {url}#/Orders/Edit/{order_id}");
+            sb.AppendLine($"Детализация: ");
+
+            for (int i = 0; i < orderDetails.Length; i++)
+            {
+                sb.AppendLine($"{i+1}) " +
+                              $"Наименование: {orderDetails[i].product_title}, " +
+                              $"Опция: {orderDetails[i].productOptions_title}, " +
+                              $"Кол-во: {orderDetails[i].quantity}, " +
+                              $"Цена/шт: {orderDetails[i].price}," +
+                              $"Итого: {orderDetails[i].quantity * orderDetails[i].price} ");
+            }
 
             string messageSubject = $"Создан заказ. №: {order_id}.";
 
-            mailHandler.SendToYourSelf(messageSubject, messageBody);
-        }
-
-        private Orders CreateOrder(DTOFormOrder formOrder)
-        {
-            return new Orders
-            {
-                fio = formOrder.fio,
-                phoneNumber = formOrder.phoneNumber,
-                payment_id = formOrder.payment_id,
-                city_id = formOrder.city_id,
-                delivery_id = formOrder.delivery_id,
-                deliveryAddress = formOrder.deliveryAddress,
-                comment = formOrder.comment,
-                device = formOrder.device,
-                orderdatetime = DateTime.Now,
-                orderstate = (int) OrderState.InProcessing
-            };
-        }
-
-        private OrdersDetails[] GetOrdersDetails(DTOFormOrder formOrder, int order_id)
-        {
-            OrdersDetails[] result = new OrdersDetails[formOrder.ordersDetails.Length];
-
-            for (int i = 0; i < formOrder.ordersDetails.Length; i++)
-            {
-                result[i] = new OrdersDetails
-                {
-                    product_id = formOrder.ordersDetails[i].product_id,
-                    price = formOrder.ordersDetails[i].price,
-                    quantity = formOrder.ordersDetails[i].quantity,
-                    order_id = order_id
-                };
-            }
-
-            return result;
+            mailHandler.SendToYourSelf(messageSubject, sb.ToString());
         }
     }
 }

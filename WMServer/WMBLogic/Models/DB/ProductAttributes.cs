@@ -23,5 +23,8 @@ namespace WMBLogic.Models.DB
 
         [Column]
         public string text { get; set; }
+        
+        [Column]
+        public int sort { get; set; }
     }
 }

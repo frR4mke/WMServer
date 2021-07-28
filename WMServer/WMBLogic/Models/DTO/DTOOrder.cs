@@ -23,45 +23,24 @@ namespace WMBLogic.Models.DTO
         public string deliveryAddress { get; set; }
 
         public DateTime orderdatetime { get; set; }
-
-        public OrderState orderstate { get; set; }
-
-        public string orderstate_title => Enumerations.GetEnumDescription(this.orderstate);
+        public string orderstate_title  { get; set; }
+        
+        public string paymenttype_title { get; set; }
 
         public decimal sum_price { get; set; }
     }
 
-    public class DTOFormOrder
-    {
-        public string fio { get; set; }
-
-        public string phoneNumber { get; set; }
-
-        public int payment_id { get; set; }
-
-        public int city_id { get; set; }
-
-        public string deliveryAddress { get; set; }
-
-        public int delivery_id { get; set; }
-
-        public string comment { get; set; }
-
-        public DateTime orderdatetime { get; set; }
-
-        public string device { get; set; }
-
-        public OrderState orderstate { get; set; }
-
-        public DTOOrderDetails[] ordersDetails { get; set; }
-    }
 
     public class DTOOrderDetails
     {
-        public int product_id { get; set; }
+        public string product_title { get; set; }
 
         public int quantity { get; set; }
 
         public decimal price { get; set; }
+        
+        public string productOptions_title { get; set; }
+
+        
     }
 }

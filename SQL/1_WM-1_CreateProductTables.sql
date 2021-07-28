@@ -97,7 +97,7 @@ GO
 ALTER TABLE Products add country varchar(max) collate Cyrillic_General_CI_AS null
 ALTER TABLE Products add subProductType_id int null
 ALTER TABLE ProductOptions ADD matLength numeric (10,2) null 
-
+ALTER TABLE ProductOptions ADD size varchar (max) null 
 
 
 

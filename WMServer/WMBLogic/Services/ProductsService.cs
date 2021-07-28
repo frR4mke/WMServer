@@ -1,39 +1,42 @@
-﻿using NDapper.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using WMBLogic.Models.DB;
 using WMBLogic.Models.DTO;
 using System;
 using System.Data;
-using System.Data.SqlClient;
 using Dapper;
 using DapperQueryBuilder;
-using WMBLogic.Models.ENUMS;
 using Extensions;
 using NDapper;
 using WMBLogic.Embedded;
-using WMBLogic.Models.INTERFACES;
+
 using Filter = WMBLogic.Models.FILTRES.Filter;
-using Mail;
+
 
 namespace WMBLogic.Services
 {
     public class ProductsService : IHasEmbeddedResources
     {
-        readonly IDataBase database;
         readonly IDbConnection dbConnection;
 
-        public ProductsService(IDataBase database, IDbConnection dbConnection)
+        public ProductsService(IDbConnection dbConnection)
         {
-            this.database = database;
             this.dbConnection = dbConnection;
         }
 
+        public IEnumerable<DTOSearchProduct> SearchProducts(string search)
+        {
+            var sql = $"select product_id, product_title from Products where product_title like '%{search}%'";
+            
+            IEnumerable<DTOSearchProduct> products = dbConnection.Query<DTOSearchProduct>(sql);
+            
+            return products;
+        }
         public IEnumerable<DTOProductOptions> GetProductOptionsList(int product_id)
         {
-            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductOptionsSql) + " where po.product_id = @product_id";
+            string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductOptionsSql);
 
-            IEnumerable<DTOProductOptions> productOptionList = database.ExucuteQuery<DTOProductOptions>(sql, new {product_id});
+            IEnumerable<DTOProductOptions> productOptionList = dbConnection.Query<DTOProductOptions>(sql, new {product_id});
 
             return productOptionList;
         }
@@ -42,11 +45,19 @@ namespace WMBLogic.Services
         {
             string sql = this.GetString(SQLPath.DTOProductSql);
 
-            IEnumerable<DTOProducts> products = database.ExucuteQuery<DTOProducts>(sql);
-
+            IEnumerable<DTOProducts> products = dbConnection.Query<DTOProducts>(sql);
+    
             return products;
         }
+        public IEnumerable<DTOProducts> GetDTOPromotionalProducts()
+        {
+            string sql = this.GetString(SQLPath.DTOPromotionalProducts);
 
+            IEnumerable<DTOProducts> products = dbConnection.Query<DTOProducts>(sql);
+    
+            return products;
+        }
+        
         public DTOProductView GetProductView(int product_id)
         {
             string sql = EmbeddedResourceManager.GetString(typeof(ProductsService), SQLPath.DTOProductViewSql);
@@ -57,7 +68,7 @@ namespace WMBLogic.Services
 
             if (productView != null)
             {
-                var productAttributes = result.Read<ProductAttributes>().ToArray();
+                var productAttributes = result.Read<ProductAttributes>().OrderBy(x => x.sort).ToArray();
 
                 foreach (var p in productView)
                     p.productAttributes = productAttributes;
@@ -70,11 +81,13 @@ namespace WMBLogic.Services
         {
             FormattableString querySelect = $@"
             			SELECT  po.*,
+                                CAST(ROUND( po.price - (po.price / d.percentage), 0) AS decimal(7,0)) as discountprice,
                                 p.productType_id,
                                 i.image_title,
                                 p.full_product_title
                                 FROM ProductOptions po  
                                     JOIN Products p ON p.product_id = po.product_id and p.product_id = {product_id}
+                                    LEFT JOIN PercentageDiscount d on p.product_id = d.product_id
 		                            JOIN Images i ON p.product_id = i.product_id
             			/**where**/";
 
@@ -97,7 +110,7 @@ namespace WMBLogic.Services
                                 " where p.product_id in @product_ids and p.manufacturer_id in @manufacturer";
 
             IEnumerable<DTOProducts> products =
-                database.ExucuteQuery<DTOProducts>(productSql, new {product_ids, manufacturer = filter.manufacturer.Select(x => x.manufacturer_id).ToList()});
+                dbConnection.Query<DTOProducts>(productSql, new {product_ids, manufacturer = filter.manufacturer.Select(x => x.manufacturer_id).ToList()});
 
             return products;
         }
@@ -117,14 +130,13 @@ namespace WMBLogic.Services
         {
             var sql = "select product_id, product_title from Products";
 
-            var result = database.ExucuteQuery<ProductSelectList>(sql);
+            var result = dbConnection.Query<ProductSelectList>(sql);
 
             return result;
         }
 
         public IEnumerable<ProductOptionsSelectList> GetProductOptionsSelectListByIds(int[] product_ids)
         {
-            // var ids = product_ids.Select(x => x.ToString()).Join(",");
 
             var sql = @"select productOptions_id, 
 			case when power is not null then CONVERT(varchar, power) + N' ВТ/ ' else '' end  +
@@ -134,7 +146,7 @@ namespace WMBLogic.Services
             price, product_id
 			from ProductOptions where product_id in @ids";
 
-            var result = database.ExucuteQuery<ProductOptionsSelectList>(sql, new {@ids = product_ids});
+            var result = dbConnection.Query<ProductOptionsSelectList>(sql, new {@ids = product_ids});
 
             return result;
         }
@@ -149,7 +161,7 @@ namespace WMBLogic.Services
             price, product_id
 			from ProductOptions where product_id = @product_id";
 
-            var result = database.ExucuteQuery<ProductOptionsSelectList>(sql, new {@product_id = product_id});
+            var result = dbConnection.Query<ProductOptionsSelectList>(sql, new {@product_id = product_id});
 
             return result;
         }

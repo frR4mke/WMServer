@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using Dapper;
 using Microsoft.IdentityModel.Tokens;
 using NDapper.Interfaces;
 using WMBLogic.Models.DB;
@@ -12,11 +14,13 @@ namespace WMBLogic.Services
 {
     public class UserService : IUserService
     {
+        readonly IDbConnection dbConnection;
         readonly IDataBase database;
 
-        public UserService(IDataBase database)
+        public UserService(IDataBase database, IDbConnection dbConnection)
         {
             this.database = database;
+            this.dbConnection = dbConnection;
         }
 
         public User Login(User oUser)
@@ -52,7 +56,7 @@ namespace WMBLogic.Services
 
         private User GetUser(string username)
         {
-            return database.ExucuteQuery<User>("select * from Users where username = @username", new {@username = username}).FirstOrDefault();
+            return dbConnection.Query<User>("select * from Users where username = @username", new {@username = username}).FirstOrDefault();
         }
     }
 }

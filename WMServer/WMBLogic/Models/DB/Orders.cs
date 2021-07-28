@@ -35,12 +35,33 @@ namespace WMBLogic.Models.DB
         public DateTime orderdatetime { get; set; }
 
         [Column]
-        public int orderstate { get; set; }
+        public int orderstate_id { get; set; }
+        
+        [Column]
+        public int paymenttype_id { get; set; }
 
         [Column]
         public string device { get; set; }
     }
 
+    public class PaymentType
+    {
+        [Key]
+        [Column]
+        public int paymenttype_id { get; set; }
+
+        [Column]
+        public string paymenttype_title { get; set; }
+    }
+    public class OrderStates
+    {
+        [Key]
+        [Column]
+        public int orderstate_id { get; set; }
+
+        [Column]
+        public string orderstate_title { get; set; }
+    }
     public class PaymentMethods
     {
         [Key]

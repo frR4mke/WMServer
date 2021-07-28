@@ -19,10 +19,11 @@ D:\Projects\WM2\WMServer\NDapper\bin\Debug\netcoreapp3.1\ConnectionManager.dll
 D:\Projects\WM2\WMServer\NDapper\bin\Debug\netcoreapp3.1\Extensions.dll
 D:\Projects\WM2\WMServer\NDapper\bin\Debug\netcoreapp3.1\ConnectionManager.pdb
 D:\Projects\WM2\WMServer\NDapper\bin\Debug\netcoreapp3.1\Extensions.pdb
-D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.csprojAssemblyReference.cache
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.AssemblyInfoInputs.cache
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.AssemblyInfo.cs
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.csproj.CopyComplete
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.dll
 D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.pdb
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\netcoreapp3.1\NDapper.GeneratedMSBuildEditorConfig.editorconfig

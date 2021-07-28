@@ -23,9 +23,17 @@
 		<None Remove="Embedded\DTO\DTOOrderByID.sql" />
 		<None Remove="Embedded\DTO\DTOCustomerForm.sql" />
 		<None Remove="Embedded\DTO\DTOOrderList.sql" />
-		<None Remove="Embedded\DTO\DROOrderEdit.sql" />		
+		<None Remove="Embedded\DTO\DTOOrderEdit.sql" />
+		<None Remove="Embedded\DTO\DTOOrderDetails.sql" />
+		<None Remove="Embedded\DTO\DTOMAIL.sql" />
+		<None Remove="Embedded\DTO\DTOPromotionalProducts.sql" />
+
 	</ItemGroup>
 	<ItemGroup>
+		<EmbeddedResource Include="Embedded\DTO\DTOGiftGoods.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOOrderDetails.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOPercentageDiscount.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOPromotionalProducts.sql" />
 		<EmbeddedResource Include="Embedded\DTO\Filter.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProducts.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOProductOptions.sql" />
@@ -33,12 +41,15 @@
 		<EmbeddedResource Include="Embedded\DTO\DTOCustomerForm.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOOrderByID.sql" />
 		<EmbeddedResource Include="Embedded\DTO\DTOOrder.sql" />
-		<EmbeddedResource Include="Embedded\DTO\DTOOrderList.sql" />
-		<EmbeddedResource Include="Embedded\DTO\DROOrderEdit.sql" />	
+		<EmbeddedResource Include="Embedded\DTO\DTOOrderEdit.sql" />
+		<EmbeddedResource Include="Embedded\DTO\DTOOrderList.sql" />		
+		<EmbeddedResource Include="Embedded\DTO\DTOMAIL.sql" />	
 
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+	  <PackageReference Include="Dapper.Extensions.NetCore" Version="4.0.0" />
+	  <PackageReference Include="Dapper.Extensions.SQLite" Version="4.0.0" />
 	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
 	</ItemGroup>
 	

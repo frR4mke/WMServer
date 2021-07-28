@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper.Extensions.NetCore" Version="4.0.0" />
+    <PackageReference Include="Dapper.Extensions.SQLite" Version="4.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.13" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.1" />
@@ -15,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AuthLibrary\AuthLibrary.csproj" />
-    <ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />
+    <ProjectReference Include="..\ConnectionManager\ConnectionManager.csproj" />    
     <ProjectReference Include="..\ErrorLogger\ErrorLogger.csproj" />
     <ProjectReference Include="..\Mail\Mail.csproj" />
     <ProjectReference Include="..\WMBLogic\WMBLogic.csproj" />

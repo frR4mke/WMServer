@@ -6,8 +6,7 @@ namespace ErrorLogger
 {
     public class ErrorLogger
     {
-        readonly IDbConnection dbConnection;
-
+        private IDbConnection dbConnection;
         public ErrorLogger(IDbConnection dbConnection)
         {
             this.dbConnection = dbConnection;

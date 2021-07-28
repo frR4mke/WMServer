@@ -29,6 +29,9 @@ namespace WMBLogic.Models.DB
 
         [Column]
         public decimal price { get; set; }
+        
+        [Column]
+        public string size { get; set; }
     }
 
     public class ProductOptionsSelectList

@@ -17,11 +17,13 @@ namespace WMServer.Controllers
     [ApiController]
     public class OrdersController : ControllerBase
     {
-        readonly OrderService orderService;
+        private OrderService orderService;
+        private ErrorLogger.ErrorLogger _errorLogger;
 
-        public OrdersController(OrderService orderService)
+        public OrdersController(OrderService orderService, ErrorLogger.ErrorLogger errorLogger)
         {
             this.orderService = orderService;
+            _errorLogger = errorLogger;
         }
 
 
@@ -29,32 +31,77 @@ namespace WMServer.Controllers
         [HttpPost]
         public int Post([FromBody] DTOOrderEdit formOrder)
         {
-            return orderService.SaveOrder(formOrder, Request.Headers["Referer"].ToString());
+            try
+            {
+                return orderService.SaveOrder(formOrder, Request.Headers["Referer"].ToString());
+
+            }
+            catch (Exception e)
+            {
+                _errorLogger.LogError(e, "Ошибка сохранения заказа");
+                throw;
+            }
         }
 
         [Route("GetSelectLists")]
         public SelectLists GetSelectLists()
         {
-            return orderService.GetSelectLists();
+            try
+            {
+                return orderService.GetSelectLists();
+
+            }
+            catch (Exception e)
+            {
+                _errorLogger.LogError(e, "Ошибка получения формы для оформления заказа");
+                throw;
+            }
         }
 
         [Route("GetDTOOrder")]
         public IEnumerable<DTOOrder> GetDTOOrder()
         {
-            return orderService.GetDTOOrder();
+            try
+            {
+                return orderService.GetDTOOrder();
+            }
+            catch (Exception e)
+            {
+                _errorLogger.LogError(e, "Ошибка получения заказов");
+                throw;
+            }
+           
         }
 
         [Route("GetOrder/{order_id}")]
         public DTOOrderEdit GetOrder(int order_id)
         {
-            return orderService.GetOrder(order_id);
+            try
+            {
+                return orderService.GetOrder(order_id);
+
+            }
+            catch (Exception e)
+            {
+                _errorLogger.LogError(e, "Ошибка получения заказа");
+                throw;
+            }
         }
 
         [HttpPost]
         [Route("UpdateOrder")]
         public void UpdateOrder([FromBody] DTOOrderEdit order)
         {
-            orderService.UpdateOrder(order);
+            try
+            {
+                orderService.UpdateOrder(order);
+
+            }
+            catch (Exception e)
+            {
+                _errorLogger.LogError(e, "Ошибка редактирования заказа");
+                throw;
+            }
         }
     }
 }

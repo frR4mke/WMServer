@@ -16,7 +16,7 @@ CREATE TABLE [dbo].[Orders](
 	[delivery_id] [int] NOT NULL,
 	[orderdatetime] [datetime] NOT NULL,
 	[device] [varchar] (20) NOT NULL,
-	[orderstate] [int] NOT NULL,
+	[orderstate_id] [int] NOT NULL,
 	[comment] [varchar](max) NULL	
  CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
 (
@@ -32,6 +32,9 @@ REFERENCES [dbo].[CitiesServed] ([city_id])
 
 ALTER TABLE [dbo].[Orders]  WITH CHECK ADD  CONSTRAINT [FK_OrdersDeliveryMethods] FOREIGN KEY([delivery_id])
 REFERENCES [dbo].[DeliveryMethods] ([delivery_id])
+
+ALTER TABLE [dbo].[Orders]  WITH CHECK ADD  CONSTRAINT [FK_OrdersOrderStates] FOREIGN KEY([orderstate_id])
+REFERENCES [dbo].[OrderStates] ([orderstate_id])
 
 
 
