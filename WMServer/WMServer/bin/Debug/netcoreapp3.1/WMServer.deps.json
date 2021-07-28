@@ -427,22 +427,22 @@
           "lib/netstandard2.0/Dapper.Extensions.SQLite.dll": {}
         }
       },
-      "EntityFramework/6.3.0": {
+      "EntityFramework/6.4.4": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "System.CodeDom": "4.6.0",
-          "System.ComponentModel.Annotations": "4.6.0",
-          "System.Configuration.ConfigurationManager": "4.6.0",
+          "System.CodeDom": "4.7.0",
+          "System.ComponentModel.Annotations": "4.7.0",
+          "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
           "lib/netstandard2.1/EntityFramework.SqlServer.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.300.19.46401"
+            "fileVersion": "6.400.420.21404"
           },
           "lib/netstandard2.1/EntityFramework.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.300.19.46401"
+            "fileVersion": "6.400.420.21404"
           }
         },
         "compile": {
@@ -706,7 +706,7 @@
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
-      "Microsoft.Win32.SystemEvents/4.6.0": {
+      "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
@@ -789,27 +789,31 @@
           "lib/netstandard2.1/System.Data.SQLite.dll": {}
         }
       },
-      "System.CodeDom/4.6.0": {
+      "System.CodeDom/4.7.0": {
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.46214"
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.56404"
           }
         },
         "compile": {
           "ref/netstandard2.0/System.CodeDom.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.6.0": {},
-      "System.Configuration.ConfigurationManager/4.6.0": {
+      "System.ComponentModel.Annotations/4.7.0": {
+        "compile": {
+          "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
+        }
+      },
+      "System.Configuration.ConfigurationManager/4.7.0": {
         "dependencies": {
-          "System.Security.Cryptography.ProtectedData": "4.6.0",
-          "System.Security.Permissions": "4.6.0"
+          "System.Security.Cryptography.ProtectedData": "4.7.0",
+          "System.Security.Permissions": "4.7.0"
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {
-            "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.700.19.46214"
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.700.19.56404"
           }
         },
         "compile": {
@@ -859,7 +863,7 @@
       },
       "System.Data.SQLite.EF6/1.0.113": {
         "dependencies": {
-          "EntityFramework": "6.3.0"
+          "EntityFramework": "6.4.4"
         },
         "runtime": {
           "lib/netstandard2.1/System.Data.SQLite.EF6.dll": {
@@ -882,10 +886,10 @@
           "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.dll": {}
         }
       },
-      "System.Drawing.Common/4.6.0": {
+      "System.Drawing.Common/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.SystemEvents": "4.6.0"
+          "Microsoft.Win32.SystemEvents": "4.7.0"
         }
       },
       "System.IdentityModel.Tokens.Jwt/6.11.0": {
@@ -911,32 +915,32 @@
         }
       },
       "System.Security.Cryptography.Cng/4.5.0": {},
-      "System.Security.Cryptography.ProtectedData/4.6.0": {
+      "System.Security.Cryptography.ProtectedData/4.7.0": {
         "runtime": {
           "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.19.46214"
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
           }
         },
         "runtimeTargets": {
           "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
             "rid": "win",
             "assetType": "runtime",
-            "assemblyVersion": "4.0.4.0",
-            "fileVersion": "4.700.19.46214"
+            "assemblyVersion": "4.0.5.0",
+            "fileVersion": "4.700.19.56404"
           }
         }
       },
-      "System.Security.Permissions/4.6.0": {
+      "System.Security.Permissions/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
-          "System.Windows.Extensions": "4.6.0"
+          "System.Windows.Extensions": "4.7.0"
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
-      "System.Windows.Extensions/4.6.0": {
+      "System.Windows.Extensions/4.7.0": {
         "dependencies": {
-          "System.Drawing.Common": "4.6.0"
+          "System.Drawing.Common": "4.7.0"
         }
       },
       "AuthLibrary/1.0.0": {
@@ -964,7 +968,8 @@
       },
       "ErrorLogger/1.0.0": {
         "dependencies": {
-          "Dapper": "2.0.90"
+          "Dapper": "2.0.90",
+          "EntityFramework": "6.4.4"
         },
         "runtime": {
           "ErrorLogger.dll": {}
@@ -2698,12 +2703,12 @@
       "path": "dapper.extensions.sqlite/4.0.0",
       "hashPath": "dapper.extensions.sqlite.4.0.0.nupkg.sha512"
     },
-    "EntityFramework/6.3.0": {
+    "EntityFramework/6.4.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-mEvhoXscTyLFMcnbLzKlbWdx6N8fCY2IMe4drjUTMFqOqI4KThnTPXr1m50oXDJAn5PvCy2e90IcwN/OxkJUjg==",
-      "path": "entityframework/6.3.0",
-      "hashPath": "entityframework.6.3.0.nupkg.sha512"
+      "sha512": "sha512-yj1+/4tci7Panu3jKDHYizxwVm0Jvm7b7m057b5h4u8NUHGCR8WIWirBTw+8EptRffwftIWPBeIRGNKD1ewEMQ==",
+      "path": "entityframework/6.4.4",
+      "hashPath": "entityframework.6.4.4.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.13": {
       "type": "package",
@@ -2852,12 +2857,12 @@
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/4.6.0": {
+    "Microsoft.Win32.SystemEvents/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Edg+pFW5C8WJb680Za2kTV8TqUi6Ahl/WldRVoOVJ23UQLpDHFspa+umgFjkWZw24ETsU99Cg+ErZz683M4chg==",
-      "path": "microsoft.win32.systemevents/4.6.0",
-      "hashPath": "microsoft.win32.systemevents.4.6.0.nupkg.sha512"
+      "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
+      "path": "microsoft.win32.systemevents/4.7.0",
+      "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",
@@ -2901,26 +2906,26 @@
       "path": "stub.system.data.sqlite.core.netstandard/1.0.113.2",
       "hashPath": "stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512"
     },
-    "System.CodeDom/4.6.0": {
+    "System.CodeDom/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ArWGZOxPhOaJUd4YgvbTxGZDbVDJHPAOQNiJIpbRDPW6v2NT5xkallQv1zpu8Rwwb5Z3iZ1jwWA4gSQuWgR+jw==",
-      "path": "system.codedom/4.6.0",
-      "hashPath": "system.codedom.4.6.0.nupkg.sha512"
+      "sha512": "sha512-Hs9pw/kmvH3lXaZ1LFKj3pLQsiGfj2xo3sxSzwiLlRL6UcMZUTeCfoJ9Udalvn3yq5dLlPEZzYegrTQ1/LhPOQ==",
+      "path": "system.codedom/4.7.0",
+      "hashPath": "system.codedom.4.7.0.nupkg.sha512"
     },
-    "System.ComponentModel.Annotations/4.6.0": {
+    "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pOd+UhZ3X8xfwKDlgAzowUJNjp8VYVmOHZm++vCd0kq1HZ0zK3mNo2yRXjYgv7Ik/Xi43fmJfND2PLEsQSALCg==",
-      "path": "system.componentmodel.annotations/4.6.0",
-      "hashPath": "system.componentmodel.annotations.4.6.0.nupkg.sha512"
+      "sha512": "sha512-0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "hashPath": "system.componentmodel.annotations.4.7.0.nupkg.sha512"
     },
-    "System.Configuration.ConfigurationManager/4.6.0": {
+    "System.Configuration.ConfigurationManager/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gkNklXxdmB3r4SQTUzRhESZAb3MotgDz24XYi2R/bIjJ10SF0KHJ/qTEwi9CLyIAOTjmCo8Vx8+rKldLaiW7Ig==",
-      "path": "system.configuration.configurationmanager/4.6.0",
-      "hashPath": "system.configuration.configurationmanager.4.6.0.nupkg.sha512"
+      "sha512": "sha512-/anOTeSZCNNI2zDilogWrZ8pNqCmYbzGNexUnNhjW8k0sHqEZ2nHJBp147jBV3hGYswu5lINpNg1vxR7bnqvVA==",
+      "path": "system.configuration.configurationmanager/4.7.0",
+      "hashPath": "system.configuration.configurationmanager.4.7.0.nupkg.sha512"
     },
     "System.Data.SqlClient/4.8.2": {
       "type": "package",
@@ -2957,12 +2962,12 @@
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
     },
-    "System.Drawing.Common/4.6.0": {
+    "System.Drawing.Common/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
-      "path": "system.drawing.common/4.6.0",
-      "hashPath": "system.drawing.common.4.6.0.nupkg.sha512"
+      "sha512": "sha512-v+XbyYHaZjDfn0ENmJEV1VYLgGgCTx1gnfOBcppowbpOAriglYgGCvFCPr2EEZyBvXlpxbEsTwkOlInl107ahA==",
+      "path": "system.drawing.common/4.7.0",
+      "hashPath": "system.drawing.common.4.7.0.nupkg.sha512"
     },
     "System.IdentityModel.Tokens.Jwt/6.11.0": {
       "type": "package",
@@ -2992,19 +2997,19 @@
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.ProtectedData/4.6.0": {
+    "System.Security.Cryptography.ProtectedData/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zdCsTOakmbAQVyOI6+ZadvXZgzSiFiY5nXAfGUQNGrz3ofc9sjehpXRvqYb3vWUsvloYFILSpiQCjiZVFKRBjA==",
-      "path": "system.security.cryptography.protecteddata/4.6.0",
-      "hashPath": "system.security.cryptography.protecteddata.4.6.0.nupkg.sha512"
+      "sha512": "sha512-ehYW0m9ptxpGWvE4zgqongBVWpSDU/JCFD4K7krxkQwSz/sFQjEXCUqpvencjy6DYDbn7Ig09R8GFffu8TtneQ==",
+      "path": "system.security.cryptography.protecteddata/4.7.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.7.0.nupkg.sha512"
     },
-    "System.Security.Permissions/4.6.0": {
+    "System.Security.Permissions/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-W3Uxog9KCZAmGYsOFHgJnb7L2q+SDbxS3vGnFHmErUnXuIjWYpIh1KVTlua7qmPdrlRCkAcTF9dImv+jciBPOQ==",
-      "path": "system.security.permissions/4.6.0",
-      "hashPath": "system.security.permissions.4.6.0.nupkg.sha512"
+      "sha512": "sha512-dkOV6YYVBnYRa15/yv004eCGRBVADXw8qRbbNiCn/XpdJSUXkkUeIvdvFHkvnko4CdKMqG8yRHC4ox83LSlMsQ==",
+      "path": "system.security.permissions/4.7.0",
+      "hashPath": "system.security.permissions.4.7.0.nupkg.sha512"
     },
     "System.Security.Principal.Windows/4.7.0": {
       "type": "package",
@@ -3013,12 +3018,12 @@
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
     },
-    "System.Windows.Extensions/4.6.0": {
+    "System.Windows.Extensions/4.7.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GL4izk0KgeyXklUOHViAk7y1IOYVYcn8nDpJZgcCqNzTGv2xd+8rgGgMKMo8G9nvfEuRCrNxWnGc74EiuYH2YA==",
-      "path": "system.windows.extensions/4.6.0",
-      "hashPath": "system.windows.extensions.4.6.0.nupkg.sha512"
+      "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
+      "path": "system.windows.extensions/4.7.0",
+      "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "AuthLibrary/1.0.0": {
       "type": "project",

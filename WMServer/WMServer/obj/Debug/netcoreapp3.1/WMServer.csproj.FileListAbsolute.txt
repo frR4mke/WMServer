@@ -93,13 +93,11 @@ D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\Mail.pdb
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\WMBLogic.pdb
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\Extensions.pdb
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\NDapper.pdb
-D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csprojAssemblyReference.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.AssemblyInfoInputs.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.AssemblyInfo.cs
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csproj.CoreCompileInputs.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\staticwebassets\WMServer.StaticWebAssets.Manifest.cache
-D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\staticwebassets\WMServer.StaticWebAssets.xml
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\scopedcss\bundle\WMServer.styles.css
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.RazorTargetAssemblyInfo.cache
 D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csproj.CopyComplete
@@ -130,3 +128,6 @@ D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\osx-x64\nativ
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SQLite.Interop.dll
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SQLite.Interop.dll
 D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\WM2\WMServer\WMServer\bin\Debug\netcoreapp3.1\WMServer.StaticWebAssets.xml
+D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\WMServer\obj\Debug\netcoreapp3.1\WMServer.GeneratedMSBuildEditorConfig.editorconfig
