@@ -33,25 +33,18 @@ namespace NDapper
 
         protected DBType DBType = DBType.MSSQL;
         protected IQueryTranslatorDialect Dialect => QueryHelper.CreateDialect(DBType);
-
-        public IEnumerable<T> ExucuteQuery<T>(string query, object param = null)
+        public IRepository<T> Repository<T>()
+            where T : class
         {
-            using (IDbConnection db = new SqlConnection(connectionManager.GetConnectionString()))
-            {
-                IEnumerable<T> result = db.Query<T>(query, param).ToList();
-
-                return result;
-            }
+            return new Repository<T>(connectionManager);
         }
-
-        public IDapperRepository<T> Repository<T>() => new DapperRepository<T>(connectionManager);
     }
 
     /// <summary>
     /// CRUD Operation
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class DapperRepository<T> : Dapper, IDapperRepository<T>
+    public class Repository<T> : Dapper, IRepository<T>
     {
         private readonly ConnectionManager.ConnectionManager connectionManager;
         private string Table { get; set; }
@@ -59,7 +52,7 @@ namespace NDapper
         protected Dictionary<string, PropertyInfo> columns = new Dictionary<string, PropertyInfo>();
         protected string noKeyMessage => $"Entity {typeof(T).Name} doesn't contain any key property";
 
-        public DapperRepository(ConnectionManager.ConnectionManager connectionManager)
+        public Repository(ConnectionManager.ConnectionManager connectionManager)
         {
             this.connectionManager = connectionManager;
 
@@ -141,16 +134,6 @@ namespace NDapper
 
                 db.ExecuteScalar(query, where.parms);
             }
-        }
-
-        public void Dispose(bool disposing)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
         }
 
         public void EditEntity(T entity)

@@ -1,0 +1,12 @@
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\net6.0\Extensions.deps.json
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\net6.0\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\net6.0\ref\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\bin\Debug\net6.0\Extensions.pdb
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\ref\Extensions.dll
+D:\Projects\WM2\WMServer\Extensions\obj\Debug\net6.0\Extensions.pdb

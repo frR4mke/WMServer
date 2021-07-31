@@ -1,0 +1,17 @@
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\NDapper.deps.json
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\NDapper.dll
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\ref\NDapper.dll
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\NDapper.pdb
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\ConnectionManager.dll
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\Extensions.dll
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\ConnectionManager.pdb
+D:\Projects\WM2\WMServer\NDapper\bin\Debug\net6.0\Extensions.pdb
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.csproj.CopyComplete
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.dll
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\ref\NDapper.dll
+D:\Projects\WM2\WMServer\NDapper\obj\Debug\net6.0\NDapper.pdb

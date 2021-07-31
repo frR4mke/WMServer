@@ -18,9 +18,9 @@ namespace WMServer.Controllers
     public class OrdersController : ControllerBase
     {
         private OrderService orderService;
-        private ErrorLogger.ErrorLogger _errorLogger;
+        private ErrorLogger _errorLogger;
 
-        public OrdersController(OrderService orderService, ErrorLogger.ErrorLogger errorLogger)
+        public OrdersController(OrderService orderService, ErrorLogger errorLogger)
         {
             this.orderService = orderService;
             _errorLogger = errorLogger;

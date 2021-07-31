@@ -1,0 +1,12 @@
+D:\Projects\WM2\WMServer\Mail\bin\Debug\net6.0\Mail.deps.json
+D:\Projects\WM2\WMServer\Mail\bin\Debug\net6.0\Mail.dll
+D:\Projects\WM2\WMServer\Mail\bin\Debug\net6.0\ref\Mail.dll
+D:\Projects\WM2\WMServer\Mail\bin\Debug\net6.0\Mail.pdb
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.dll
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\ref\Mail.dll
+D:\Projects\WM2\WMServer\Mail\obj\Debug\net6.0\Mail.pdb

@@ -21,7 +21,12 @@ namespace WMBLogic.Models.DTO
         public int subProductType_id { get; set; }
 
         public string image_title { get; set; }
+        
         public string manufacturer_title { get; set; }
+        
+        public int percentage { get; set; }
+        
+        public string gift_title { get; set; }
 
         public ProductAttributes[] productAttributes { get; set; }
     }

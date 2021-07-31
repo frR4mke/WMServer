@@ -19,11 +19,11 @@ namespace WMServer.Controllers
     {
         private FilterService _filterService;
         private ProductsService _productsService;
-        private ErrorLogger.ErrorLogger _errorLogger;
+        private ErrorLogger _errorLogger;
 
         // GET: api/<ProductsController>
         public ProductsController(FilterService filterService,
-            ProductsService productsService, ErrorLogger.ErrorLogger errorLogger)
+            ProductsService productsService, WMBLogic.Services.ErrorLogger errorLogger)
         {
             _filterService = filterService;
             _productsService = productsService;

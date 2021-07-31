@@ -13,8 +13,8 @@ namespace WMServer.Controllers
     {
         private RepositoryService _repositoryService;
         private PromotionsService _promotionsService;
-        private ErrorLogger.ErrorLogger _errorLogger;
-        public PromotionsController(PromotionsService promotionsService, RepositoryService repositoryService, ErrorLogger.ErrorLogger errorLogger)
+        private ErrorLogger _errorLogger;
+        public PromotionsController(PromotionsService promotionsService, RepositoryService repositoryService, ErrorLogger errorLogger)
         {
             _promotionsService = promotionsService;
             _repositoryService = repositoryService;

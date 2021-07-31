@@ -1,12 +1,8 @@
 ﻿using NDapper.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using WMBLogic.Models.FILTRES;
 using System.Linq;
 using Extensions;
-using WMBLogic.Models.DTO;
-using WMBLogic.Models.INTERFACES;
 using System.Data;
 using Dapper;
 using NDapper;
@@ -16,9 +12,10 @@ namespace WMBLogic.Services
 {
     public class FilterService
     {
-        public readonly IDataBase database;
-        public readonly IDbConnection dbConnection;
-
+        
+        private readonly IDataBase database;
+        private readonly IDbConnection dbConnection;
+        
         public FilterService(IDataBase database, IDbConnection dbConnection)
         {
             this.dbConnection = dbConnection;

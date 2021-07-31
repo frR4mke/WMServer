@@ -16,12 +16,10 @@ namespace WMBLogic.Services
     public class PromotionsService: IHasEmbeddedResources
     {
         readonly IDbConnection dbConnection;
-        readonly IDataBase database;
-        
-        public PromotionsService(IDbConnection dbConnection, IDataBase database)
+
+        public PromotionsService(IDbConnection dbConnection)
         {
             this.dbConnection = dbConnection;
-            this.database = database;
         }
 
         public List<DTOGiftGoods> GetDTOGiftGoods()
@@ -41,31 +39,25 @@ namespace WMBLogic.Services
             return result;
         }
 
-        public PercentageDiscount GetPromotionById(int percentageDiscount_id)
-        {
-            var rep = database.Repository<PercentageDiscount>();
-
-            return rep.FindEntity(percentageDiscount_id);
-        }
-        public void AddPromotion(PercentageDiscount promotions)
-        {
-            var rep = database.Repository<PercentageDiscount>();
-
-            rep.CreateEntity(promotions);
-        }
-        public void DeletePromotion(int percentageDiscount_id)
-        {
-            var rep = database.Repository<PercentageDiscount>();
-
-            rep.DeleteEntity(percentageDiscount_id);
-        }
-        
-        public void EditPromotion(PercentageDiscount promotions)
-        {
-            var rep = database.Repository<PercentageDiscount>();
-
-            rep.EditEntity(promotions);
-        }
+        // public void AddPromotion(PercentageDiscount promotions)
+        // {
+        //     var rep = database.Repository<PercentageDiscount>();
+        //
+        //     rep.CreateEntity(promotions);
+        // }
+        // public void DeletePromotion(int percentageDiscount_id)
+        // {
+        //     var rep = database.Repository<PercentageDiscount>();
+        //
+        //     rep.DeleteEntity(percentageDiscount_id);
+        // }
+        //
+        // public void EditPromotion(PercentageDiscount promotions)
+        // {
+        //     var rep = database.Repository<PercentageDiscount>();
+        //
+        //     rep.EditEntity(promotions);
+        // }
         
     }
 }

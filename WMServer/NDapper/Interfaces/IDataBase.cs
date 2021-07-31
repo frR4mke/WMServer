@@ -8,17 +8,15 @@ namespace NDapper.Interfaces
 {
     public interface IDataBase
     {
-        IDapperRepository<T> Repository<T>();
+        IRepository<T> Repository<T>() where T : class;
     }
 
-    public interface IDapperRepository<T>
+    public interface IRepository<T>
     {
         void CreateEntity(T entity);
         T FindEntity(int? id);
         IEnumerable<T> GetTable();
         void EditEntity(T entity);
         void DeleteEntity(int id);
-        void Dispose(bool disposing);
-        void Dispose();
     }
 }

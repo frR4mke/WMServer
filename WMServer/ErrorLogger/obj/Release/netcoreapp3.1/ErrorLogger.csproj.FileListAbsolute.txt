@@ -1,9 +1,0 @@
-D:\Projects\WM2\WMServer\ErrorLogger\bin\Release\netcoreapp3.1\ErrorLogger.deps.json
-D:\Projects\WM2\WMServer\ErrorLogger\bin\Release\netcoreapp3.1\ErrorLogger.dll
-D:\Projects\WM2\WMServer\ErrorLogger\bin\Release\netcoreapp3.1\ErrorLogger.pdb
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.csprojAssemblyReference.cache
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.AssemblyInfoInputs.cache
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.AssemblyInfo.cs
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.csproj.CoreCompileInputs.cache
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.dll
-D:\Projects\WM2\WMServer\ErrorLogger\obj\Release\netcoreapp3.1\ErrorLogger.pdb
