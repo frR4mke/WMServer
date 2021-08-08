@@ -19,7 +19,6 @@ namespace Mail
         {
             MailCredentials _cre = credentials.Value;
 
-
             handler.SendFromTo("Система оповещения", _cre.Address, _cre.Address, subject, text, _cre.Password);
         }
 

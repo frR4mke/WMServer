@@ -29,6 +29,11 @@ namespace WMBLogic
         
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 
+        public DbSet<GiftGoods> GiftGoods { get; set; }
+        public DbSet<PercentageDiscount> PercentageDiscount { get; set; }
+        public DbSet<OrdersDetails> OrdersDetails { get; set; }
+        public DbSet<Orders> Orders { get; set; }
+        public DbSet<AuthOption> AuthOption { get; set; }
         public DbSet<ErrorLog> ErrorLog { get; set; }
         public DbSet<CitiesServed> CitiesServed { get; set; }
         public DbSet<DeliveryMethods> DeliveryMethods { get; set; }

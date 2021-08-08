@@ -1,0 +1,12 @@
+D:\Projects\WM2\WMServer\ConnectionManager\bin\Debug\net5.0\ConnectionManager.deps.json
+D:\Projects\WM2\WMServer\ConnectionManager\bin\Debug\net5.0\ConnectionManager.dll
+D:\Projects\WM2\WMServer\ConnectionManager\bin\Debug\net5.0\ref\ConnectionManager.dll
+D:\Projects\WM2\WMServer\ConnectionManager\bin\Debug\net5.0\ConnectionManager.pdb
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.csproj.AssemblyReference.cache
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.AssemblyInfoInputs.cache
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.AssemblyInfo.cs
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.csproj.CoreCompileInputs.cache
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.dll
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ref\ConnectionManager.dll
+D:\Projects\WM2\WMServer\ConnectionManager\obj\Debug\net5.0\ConnectionManager.pdb

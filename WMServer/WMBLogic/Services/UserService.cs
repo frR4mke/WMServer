@@ -42,7 +42,7 @@ namespace WMBLogic.Services
 
             var claims = new List<Claim>()
             {
-                new Claim(JwtRegisteredClaimNames.Name, oUser.username),
+                new Claim(JwtRegisteredClaimNames.NameId, oUser.username),
                 new Claim(JwtRegisteredClaimNames.Sub, Guid.NewGuid().ToString())
             };
             var token = new JwtSecurityToken(authOpt.issuer,

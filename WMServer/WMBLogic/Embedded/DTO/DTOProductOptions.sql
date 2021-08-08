@@ -1,6 +1,6 @@
 select
     po.*,
-    CAST(ROUND( po.price - (po.price / d.percentage), 0) AS decimal(7,0)) as discountprice,
+    CAST(ROUND( po.price - (po.price * (CAST(d.percentage as decimal) / 100)), 0) AS decimal(7,0)) as discountprice,
     p.productType_id,
     i.image_title,
     p.full_product_title

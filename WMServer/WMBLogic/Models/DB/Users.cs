@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
@@ -13,6 +14,8 @@ namespace WMBLogic.Models.DB
 
     public class AuthOption
     {
+        [Key]
+        public int authOption_id { get; set; }
         [Column]
         public string issuer { get; set; }
 
